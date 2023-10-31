@@ -20,6 +20,7 @@ public class Main {
 	 *
 	 * @param args Arguments du programme
 	 */
+	
 	public static void main(String[] args) {
 
 		Scanner clavier = new Scanner(System.in);
