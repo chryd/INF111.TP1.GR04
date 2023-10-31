@@ -29,7 +29,9 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
         privateList = new ArrayList<>();
     }
 
-    public Connexion;
+    public String findAlias(String toFind){
+        for(Connexion )
+    }
 
     /**
      * Méthode de gestion d'événements. Cette méthode contiendra le code qui gère les réponses obtenues d'un client.
