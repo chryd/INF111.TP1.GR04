@@ -4,8 +4,8 @@ import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.EvenementUtil;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
-import com.chat.commun.thread.Lecteur;
-import com.chat.commun.thread.ThreadEcouteurDeTexte;
+import com.chat.serveur.thread.Lecteur;
+import com.chat.serveur.thread.ThreadEcouteurDeTexte;
 
 import java.io.IOException;
 import java.net.ServerSocket;

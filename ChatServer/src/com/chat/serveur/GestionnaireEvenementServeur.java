@@ -29,6 +29,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
         privateList = new ArrayList<>();
     }
 
+    public Connexion;
+
     /**
      * Méthode de gestion d'événements. Cette méthode contiendra le code qui gère les réponses obtenues d'un client.
      *
@@ -51,9 +53,12 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     serveur.enlever(cnx);
                     cnx.close();
                     break;
+
                 case "LIST": //Envoie la liste des alias des personnes connectées :
                     cnx.envoyer("LIST " + serveur.list());
                     break;
+
+                //case MSG
 
                 case "JOIN":
                     // les alias
@@ -63,7 +68,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 
                     //Si une invitation entre ces utilisateurs a deja ete lance
                     if (!invitationList.isEmpty() && invitationList.contains(invitation)){
-                        traiter(new Evenement(cnx, "JOINOK", ""));
+                        cnx.envoyer("JOINOK ");
                     } else { //sinon lancer une invitation
                         invitationList.add(invitation);
                         cnx.envoyer("JOIN " + aliasArgs);

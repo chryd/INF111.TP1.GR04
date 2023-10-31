@@ -1,4 +1,4 @@
-package com.chat.commun.thread;
+package com.chat.serveur.thread;
 
 /**
  * Cette interface représente un objet qui fournit une méthode de lecture, typiquement un client ou un serveur.

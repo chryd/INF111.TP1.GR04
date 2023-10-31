@@ -1,4 +1,4 @@
-package com.chat.commun.thread;
+package com.chat.serveur.thread;
 
 /**
  * Cette classe permet de créer des threads capables de lire continuellement sur un un objet de type Lecteur.
