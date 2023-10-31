@@ -3,12 +3,8 @@ package com.chat.serveur;
 import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
-
-<<<<<<< Updated upstream
-=======
 import java.util.*;
 
->>>>>>> Stashed changes
 /**
  * Cette classe représente un gestionnaire d'événement d'un serveur. Lorsqu'un serveur reçoit un texte d'un client,
  * il crée un événement à partir du texte reçu et alerte ce gestionnaire qui réagit en gérant l'événement.
@@ -19,11 +15,8 @@ import java.util.*;
  */
 public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     private Serveur serveur;
-<<<<<<< Updated upstream
-=======
     private ArrayList<Invitation> invitationList;
     private ArrayList<SalonPrive> privateList;
->>>>>>> Stashed changes
 
     /**
      * Construit un gestionnaire d'événements pour un serveur.
@@ -32,6 +25,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
      */
     public GestionnaireEvenementServeur(Serveur serveur) {
         this.serveur = serveur;
+        invitationList = new ArrayList<Invitation>();
+        privateList = new ArrayList<SalonPrive>();
     }
 
     /**
@@ -43,11 +38,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     public void traiter(Evenement evenement) {
         Object source = evenement.getSource();
         Connexion cnx;
-<<<<<<< Updated upstream
-        String msg, typeEvenement, aliasExpediteur;
-=======
         String msg, typeEvenement, aliasExpediteur, aliasArgs;
->>>>>>> Stashed changes
         ServeurChat serveur = (ServeurChat) this.serveur;
 
         if (source instanceof Connexion) {
@@ -64,25 +55,44 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     cnx.envoyer("LIST " + serveur.list());
                     break;
 
-<<<<<<< Updated upstream
-                //Ajoutez ici d’autres case pour gérer d’autres commandes.
-=======
-                case "JOIN": //Inviter une personne aliasArgs à chatter en privé ou d'accepter l'invitation qui lui a été envoyer par aliasArgs
-
-                    //Extraire les alias
+                case "JOIN":
+                    // les alias
                     aliasExpediteur = cnx.getAlias();
                     aliasArgs = evenement.getArgument();
                     Invitation invitation = new Invitation(aliasExpediteur, aliasArgs);
 
                     //Si une invitation entre ces utilisateurs a deja ete lance
-                    if (invitationList.contains(invitation)){
-                        SalonPrive salonPrive = new SalonPrive(aliasExpediteur, aliasArgs); //ouvrir un nouveau salon prive pour ces utilisateurs
-                        privateList.add(salonPrive);
-                        invitationList.remove(invitation);
+                    if (!invitationList.isEmpty() && invitationList.contains(invitation)){
+                        traiter(new Evenement(cnx, "JOINOK", ""));
                     } else { //sinon lancer une invitation
-                        cnx.envoyer("Invitation sent to" + aliasArgs);
                         invitationList.add(invitation);
+                        cnx.envoyer("JOIN " + aliasArgs);
                     }
+                    break;
+
+                case "INV":
+                    aliasExpediteur = cnx.getAlias();
+                    String s = "";
+                    for(Invitation i:invitationList) {
+                        if(i.aPourInvite(aliasExpediteur)){
+                            String e = i.getAliasEmetteur();
+                            String r = i.getAliasRecepteur();
+                            if (!e.equals(aliasExpediteur)){
+                                s += e + ":";
+                            } else {
+                                s += r + ":";
+                            }
+                        }
+                    }
+                    cnx.envoyer("INV " + s);
+                    break;
+
+                case "JOINOK":
+                    aliasExpediteur = cnx.getAlias();
+                    aliasArgs = evenement.getArgument();
+                    SalonPrive salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
+                    privateList.add(salonPrive);
+                    invitationList.remove(new Invitation(aliasExpediteur,aliasArgs));
                     break;
 
                 case "DECLINE":
@@ -93,21 +103,9 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 
                     if(invitationList.contains(invite)){
                         if (!invite.getAliasEmetteur().equals(aliasExpediteur)){ //si l'invitation ne vient pas de l'expediteur
-                            msg = aliasArgs + "decline votre invitation";
-                            //envoie le message a l'expediteur
+                            cnx.envoyer("DECLINE aliasArgs");
                         }
                         invitationList.remove(invite);
-                    }
-                    break;
-
-                case "INV":
-                    aliasExpediteur = cnx.getAlias();
-                    cnx.envoyer("Invitations:\n");
-                    for(Invitation i:invitationList) {
-                        String sender = i.getAliasRecepteur();
-                        if (!sender.equals(aliasExpediteur)) {
-                            cnx.envoyer(sender + "\n");
-                        }
                     }
                     break;
 
@@ -116,29 +114,27 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     String[] args = evenement.getArgument().split(" ");
                     aliasArgs = args[0];
                     msg = args[1];
-                    SalonPrive salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
+                    salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
 
                     if (privateList.contains(salonPrive)){
-                        //envoyer le message prive
+                        cnx.envoyer("PRIV "+aliasArgs+msg);
                     }
                     break;
 
                 case "QUIT":
                     aliasExpediteur = cnx.getAlias();
-                    String[] newArgs = evenement.getArgument().split(" ");
-                    aliasArgs = newArgs[0];
-                    msg = newArgs[1];
-                    SalonPrive tempSalonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
+                    aliasArgs = evenement.getArgument();
+                    salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
 
-                    if (privateList.contains(tempSalonPrive)){
-                        privateList.remove(tempSalonPrive);
+                    if (privateList.contains(salonPrive)){
+                        privateList.remove(salonPrive);
                     }
+                    cnx.envoyer("QUIT");
                     break;
->>>>>>> Stashed changes
 
                 default: //Renvoyer le texte recu convertit en majuscules :
-                    msg = (evenement.getType() + " " + evenement.getArgument()).toUpperCase();
-                    cnx.envoyer(msg);
+                    msg = evenement.getType() + " " + evenement.getArgument().toUpperCase();
+                    cnx.envoyer(msg.toString());
             }
         }
     }

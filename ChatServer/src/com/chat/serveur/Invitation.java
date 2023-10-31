@@ -1,10 +1,6 @@
 package com.chat.serveur;
 
 public class Invitation {
-<<<<<<< Updated upstream
-    String hostAlias;
-    String guestAlias;
-=======
     private String aliasEmetteur;
     private String aliasRecepteur;
 
@@ -21,6 +17,10 @@ public class Invitation {
         return aliasRecepteur;
     }
 
+    public boolean aPourInvite(String a){
+        return a == aliasEmetteur || a== aliasRecepteur;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,5 +29,4 @@ public class Invitation {
         return aliasEmetteur.equals(that.aliasEmetteur) && aliasRecepteur.equals(that.aliasRecepteur) ||
                 aliasEmetteur.equals(that.aliasRecepteur) && aliasRecepteur.equals(that.aliasEmetteur);
     }
->>>>>>> Stashed changes
 }

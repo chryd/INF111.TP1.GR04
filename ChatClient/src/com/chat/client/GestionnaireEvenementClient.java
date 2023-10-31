@@ -49,6 +49,37 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     for (String s:membres)
                         System.out.println("\t\t\t- "+s);
                     break;
+                case "JOIN":
+                    arg = evenement.getArgument();
+                    System.out.println("Invitation envoye a " + arg);
+                    break;
+
+                case "INV" :
+                    arg = evenement.getArgument();
+                    membres = arg.split(":");
+                    System.out.println("\t\t"+membres.length+" personnes qui vous ont invite :");
+                    for (String s:membres)
+                        System.out.println("\t\t\t- "+s);
+                    break;
+
+                case "DECLINE" :
+                    arg = evenement.getArgument();
+                    System.out.println("Invitation avec " + arg +" supprime");
+                    break;
+
+                case "PRIV" :
+                    String[] args = evenement.getArgument().split(" ");
+                    String alias = args[0];
+                    String msg = args[1];
+
+                    //send msg
+                    break;
+
+                case "QUIT" :
+                    arg = evenement.getArgument();
+                    System.out.println("Vous quittez le salon avec " + arg);
+                    break;
+
                 default: //Afficher le texte recu :
                     System.out.println("\t\t\t."+evenement.getType()+" "+evenement.getArgument());
             }

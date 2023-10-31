@@ -1,10 +1,6 @@
 package com.chat.serveur;
 
 public class SalonPrive {
-<<<<<<< Updated upstream
-    String hostAlias;
-    String guestAlias;
-=======
     private String alias1;
     private String alias2;
 
@@ -29,5 +25,4 @@ public class SalonPrive {
         return alias1.equals(that.alias1) && alias2.equals(that.alias2) ||
                 alias1.equals(that.alias2) && alias2.equals(that.alias1);
     }
->>>>>>> Stashed changes
 }
