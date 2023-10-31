@@ -25,8 +25,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
      */
     public GestionnaireEvenementServeur(Serveur serveur) {
         this.serveur = serveur;
-        invitationList = new ArrayList<Invitation>();
-        privateList = new ArrayList<SalonPrive>();
+        invitationList = new ArrayList<>();
+        privateList = new ArrayList<>();
     }
 
     /**
@@ -126,15 +126,13 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     aliasArgs = evenement.getArgument();
                     salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
 
-                    if (privateList.contains(salonPrive)){
-                        privateList.remove(salonPrive);
-                    }
+                    privateList.remove(salonPrive);
                     cnx.envoyer("QUIT");
                     break;
 
                 default: //Renvoyer le texte recu convertit en majuscules :
                     msg = evenement.getType() + " " + evenement.getArgument().toUpperCase();
-                    cnx.envoyer(msg.toString());
+                    cnx.envoyer(msg);
             }
         }
     }

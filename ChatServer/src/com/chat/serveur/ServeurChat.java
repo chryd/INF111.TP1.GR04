@@ -2,8 +2,6 @@ package com.chat.serveur;
 
 import com.chat.commun.net.Connexion;
 
-import java.util.ArrayList;
-
 /**
  * Cette classe étend (hérite) la classe abstraite Serveur et y ajoute le nécessaire pour que le
  * serveur soit un serveur de chat.
