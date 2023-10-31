@@ -49,9 +49,10 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     for (String s:membres)
                         System.out.println("\t\t\t- "+s);
                     break;
+
                 case "JOIN":
                     arg = evenement.getArgument();
-                    System.out.println("Invitation envoye a " + arg);
+                    System.out.println("Invitation reçu de " + arg);
                     break;
 
                 case "INV" :
@@ -62,17 +63,14 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                         System.out.println("\t\t\t- "+s);
                     break;
 
-                case "DECLINE" :
+                case "JOINOK":
                     arg = evenement.getArgument();
-                    System.out.println("Invitation avec " + arg +" supprime");
+                    System.out.println("Nouveau chat privé avec "+arg);
                     break;
 
-                case "PRIV" :
-                    String[] args = evenement.getArgument().split(" ");
-                    String alias = args[0];
-                    String msg = args[1];
-
-                    //send msg
+                case "DECLINE" :
+                    arg = evenement.getArgument();
+                    System.out.println("Invitation refuse par " + arg);
                     break;
 
                 case "QUIT" :

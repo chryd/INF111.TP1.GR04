@@ -94,4 +94,13 @@ public class ServeurChat extends Serveur {
         String s = "";
         return s;
     }
+
+    public Connexion findAlias(String toFind){
+        for(Connexion c: connectes){
+            if(c.getAlias().equals(toFind)){
+                return c;
+            }
+        }
+        return null;
+    }
 }

@@ -17,10 +17,6 @@ public class Invitation {
         return aliasRecepteur;
     }
 
-    public boolean aPourInvite(String a){
-        return a == aliasEmetteur || a== aliasRecepteur;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

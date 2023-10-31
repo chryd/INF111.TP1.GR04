@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/commun/thread/Lecteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/Lecteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/commun/thread/ThreadEcouteurDeTexte.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/ThreadEcouteurDeTexte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatClient/src/com/chat/client/GestionnaireEvenementClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatClient/src/com/chat/client/GestionnaireEvenementClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/GestionnaireEvenementServeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/GestionnaireEvenementServeur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/Serveur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/Invitation.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/Invitation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/ServeurChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/ServeurChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/commun/thread/Lecteur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/commun/thread/ThreadEcouteurDeTexte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/Invitation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/Invitation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/Serveur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/Serveur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
