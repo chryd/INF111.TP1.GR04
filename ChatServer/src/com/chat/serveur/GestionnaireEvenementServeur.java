@@ -4,6 +4,9 @@ import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
 
+import java.lang.reflect.*;
+import java.util.*;
+
 /**
  * Cette classe représente un gestionnaire d'événement d'un serveur. Lorsqu'un serveur reçoit un texte d'un client,
  * il crée un événement à partir du texte reçu et alerte ce gestionnaire qui réagit en gérant l'événement.
@@ -14,6 +17,7 @@ import com.chat.commun.net.Connexion;
  */
 public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     private Serveur serveur;
+    private ArrayList<Invitation> invitationList;
 
     /**
      * Construit un gestionnaire d'événements pour un serveur.
@@ -22,6 +26,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
      */
     public GestionnaireEvenementServeur(Serveur serveur) {
         this.serveur = serveur;
+        invitationList = new ArrayList<Invitation>();
     }
 
     /**
@@ -33,7 +38,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     public void traiter(Evenement evenement) {
         Object source = evenement.getSource();
         Connexion cnx;
-        String msg, typeEvenement, aliasExpediteur;
+        String msg, typeEvenement, aliasExpediteur, alias2;
         ServeurChat serveur = (ServeurChat) this.serveur;
 
         if (source instanceof Connexion) {
@@ -50,7 +55,22 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     cnx.envoyer("LIST " + serveur.list());
                     break;
 
-                //Ajoutez ici d’autres case pour gérer d’autres commandes.
+                case "JOIN": //Inviter une personne alias2 à chatter en privé ou d'accepter l'invitation qui lui a été envoyer par alias2
+
+                    //Extraire les alias
+                    aliasExpediteur = cnx.getAlias();
+                    alias2 = evenement.getArgument();
+                    Invitation invitation = new Invitation(aliasExpediteur, alias2); //??? invitation cree pour non pas chaque evenement, mais chaque utilisateurs?
+                        //ou stocker les invitations? car si une invitation entre les utilisateurs existent deja, then il faut seulement la consulter?
+
+                    //Si une invitation a deja ete lance
+                    if (invitationList.contains(invitation)){
+                        SalonPrive salonPrive = new SalonPrive(aliasExpediteur, alias2); //ouvrir un nouveau salon prive pour ces utilisateurs
+                    } else { //sinon lancer une invitation
+                        cnx.envoyer("Invitation sent to" + alias2);
+                        invitation.sendInvitation(); //lancer une invitation
+                    }
+                    break;
 
                 default: //Renvoyer le texte recu convertit en majuscules :
                     msg = (evenement.getType() + " " + evenement.getArgument()).toUpperCase();

@@ -92,7 +92,7 @@ public class Serveur implements Lecteur {
         } catch (IOException e) {
             System.out.println("serveurSocket erreur : " + e.getMessage());
         }
-        //On ferme toutes les connexions après avoir envoer "END." à chacun des clients :
+        //On ferme toutes les connexions après avoir envoyer "END." à chacun des clients :
         iterateur = connectes.listIterator();
         while (iterateur.hasNext()) {
             cnx = iterateur.next();
