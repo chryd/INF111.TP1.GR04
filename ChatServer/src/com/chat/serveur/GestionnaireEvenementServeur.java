@@ -68,6 +68,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     if (!invitationList.isEmpty() && invitationList.contains(invitation)){
                         cnx.envoyer("JOINOK " + aliasArgs);
                         serveur.findAlias(aliasArgs).envoyer("JOINOK " + aliasExpediteur);
+                        privateList.add(new SalonPrive(aliasExpediteur, aliasArgs));
+                        invitationList.remove(invitation);
                     } else { //sinon lancer une invitation
                         invitationList.add(invitation);
                         serveur.findAlias(aliasArgs).envoyer("JOIN " + aliasExpediteur);
@@ -82,7 +84,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 
                     if(invitationList.contains(invitation)){
                         if (!invitation.getAliasEmetteur().equals(aliasExpediteur)){ //si l'invitation ne vient pas de l'expediteur
-                            cnx.envoyer("DECLINE " + aliasExpediteur);
+                            serveur.findAlias(aliasArgs).envoyer("DECLINE " + aliasExpediteur);
                         }
                         invitationList.remove(invitation);
                     }
@@ -90,9 +92,9 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 
                 case "PRV":
                     aliasExpediteur = cnx.getAlias();
-                    String[] args = evenement.getArgument().split(" ");
+                    String[] args = evenement.getArgument().split(" ",2);
                     aliasArgs = args[0];
-                    msg = args[1];
+                    msg = aliasExpediteur + " (private)>> " + args[1];
                     salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
 
                     if (privateList.contains(salonPrive)){
@@ -117,7 +119,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
 
                     privateList.remove(salonPrive);
-                    cnx.envoyer("QUIT");
+                    cnx.envoyer("QUIT " + aliasArgs);
+                    serveur.findAlias(aliasArgs).envoyer("QUIT " + aliasExpediteur);
                     break;
 
                 /*case "CHESS":

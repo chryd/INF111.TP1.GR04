@@ -57,10 +57,19 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
 
                 case "INV" :
                     arg = evenement.getArgument();
-                    membres = arg.split(":");
-                    System.out.println("\t\t"+membres.length+" personnes qui vous ont invite :");
-                    for (String s:membres)
-                        System.out.println("\t\t\t- "+s);
+                    membres = arg.split(":");//remove " "
+                    int lMembres = membres.length;
+
+                    if (lMembres == 0){
+                        System.out.println("Pas d'invitation");
+                    } else {
+                        if (lMembres == 1) {
+                            System.out.println("\t\t" + lMembres + " personne qui vous a invite :");
+                        } else {
+                            System.out.println("\t\t" + lMembres + " personnes qui vous ont invite :");
+                        }
+                        for (String s:membres) System.out.println("\t\t\t- "+s);
+                    }
                     break;
 
                 case "JOINOK":
@@ -75,7 +84,7 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
 
                 case "QUIT" :
                     arg = evenement.getArgument();
-                    System.out.println("Vous quittez le salon avec " + arg);
+                    System.out.println("Vous quittez le salon avec " + arg); //quit?
                     break;
 
                 default: //Afficher le texte recu :
