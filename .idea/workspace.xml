@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="q3 fini, tested et patched, prv fini (join has some issues some times still)">
-      <change afterPath="$PROJECT_DIR$/ChatClient/src/com/chat/programme/playground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/programme/playground.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
