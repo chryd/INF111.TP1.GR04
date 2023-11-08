@@ -59,7 +59,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     break;
 
                 case "JOIN":
-                    // les alias
+                    //Definir les alias
                     aliasExpediteur = cnx.getAlias();
                     aliasArgs = evenement.getArgument();
                     invitation = new Invitation(aliasExpediteur, aliasArgs);
@@ -77,22 +77,27 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     break;
 
                 case "DECLINE":
-                    //Extraire les alias
+                    //Definir les alias
                     aliasExpediteur = cnx.getAlias();
                     aliasArgs = evenement.getArgument();
                     invitation = new Invitation(aliasArgs, aliasExpediteur);
 
+                    //Si l'invitation existe deja
                     if(invitationList.contains(invitation)){
                         if (!invitation.getAliasEmetteur().equals(aliasExpediteur)){ //si l'invitation ne vient pas de l'expediteur
+                            //envoyer un message a l'expediteur afin d'indiquer que l'invitation est refusee
                             serveur.findAlias(aliasArgs).envoyer("DECLINE " + aliasExpediteur);
                         }
-                        invitationList.remove(invitation);
+                        invitationList.remove(invitation); //retirer l'invitation de la liste
                     }
                     break;
 
                 case "PRV":
-                    aliasExpediteur = cnx.getAlias();
+                    //
                     String[] args = evenement.getArgument().split(" ",2);
+
+                    //definir les alias
+                    aliasExpediteur = cnx.getAlias();
                     aliasArgs = args[0];
                     msg = aliasExpediteur + " (private)>> " + args[1];
                     salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
@@ -125,11 +130,6 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 
                 /*case "CHESS":
                     break;*/
-                case "LIST": //Envoie la liste des alias des personnes connect�es :
-                    cnx.envoyer("LIST " + serveur.list());
-                    break;
-
-                //Ajoutez ici d�autres case pour g�rer d�autres commandes.
 
                 /**
                  * Le case permettant l'envoie du message à tous les utilisateurs hormis l'expéditeur.
