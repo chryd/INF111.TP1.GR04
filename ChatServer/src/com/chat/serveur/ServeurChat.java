@@ -2,6 +2,8 @@ package com.chat.serveur;
 
 import com.chat.commun.net.Connexion;
 
+import java.util.*;
+
 /**
  * Cette classe �tend (h�rite) la classe abstraite Serveur et y ajoute le n�cessaire pour que le
  * serveur soit un serveur de chat.
@@ -95,6 +97,12 @@ public class ServeurChat extends Serveur {
         return s;
     }
 
+    /**
+     * Méthode pour trouver un utilisateur specifique
+     *
+     * @param toFind String chaine de caractere du nom d'un alias a retrouver
+     * @return Connexion la connexion representant l'utilisateur a retrouver
+     */
     public Connexion findAlias(String toFind) {
         for (Connexion c : connectes) {
             if (c.getAlias().equals(toFind)) {
@@ -103,15 +111,44 @@ public class ServeurChat extends Serveur {
         }
         return null;
     }
+
     /**
      * Méthode pour envoyer le message a tout les autres utilisateurs.
+     *
+     * @param str
+     * @param aliasExpediteur
      */
     public void envoyerATousSauf(String str, String aliasExpediteur){
 
         for (Connexion utiliConnecter : connectes) {
-            if (utiliConnecter.getAlias() != aliasExpediteur) {
+            if (!Objects.equals(utiliConnecter.getAlias(), aliasExpediteur)) {
                 utiliConnecter.envoyer(str);
             }
+        }
+    }
+
+    /**
+     * Methode pour trouver verifier si l'utilisateur recherche est connecte
+     *
+     * @param toFind String chaine de caractere representant l'alias de l'utilisateur a retrouver
+     */
+    public void checkIfConnected(String toFind) throws NonExistentUserException {
+        if (this.findAlias(toFind)==null){
+            throw new NonExistentUserException("Utilisateur non existant");
+        }
+    }
+
+    /**
+     * Cette classe etend(herite) la classe Exception afin de prendre en charge les cas d'exception ou l'utilisateur n'existe pas.
+     */
+    public class NonExistentUserException extends Exception {
+        /**
+         * Creer une exception pour le cas ou l'utilisateur n'existe pas
+         *
+         * @param errorMessage String chaine de caractere a afficher lorsque l'exception NonExistentUserException est genere
+         */
+        public NonExistentUserException(String errorMessage){
+            super(errorMessage);
         }
     }
 }

@@ -52,4 +52,24 @@ public class Evenement {
     public String getArgument() {
         return argument;
     }
+
+    /**
+     * Retourne le nombre d'arguments de l'événement
+     *
+     * @return int nArguments
+     */
+    public int nArguments(){
+        String[] listeArgs = argument.split(" ");
+        return listeArgs.length;
+    }
+
+    /**
+     * Verifie si le nombre d'arguments est adequat
+     *
+     */
+    public void checkArguments(int l, int u){
+        if(this.nArguments() < l || this.nArguments() > u){
+            throw new IllegalArgumentException("Pas le nombre d'arguments attendu");
+        }
+    }
 }

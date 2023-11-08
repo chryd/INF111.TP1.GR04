@@ -50,14 +50,14 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                         System.out.println("\t\t\t- "+s);
                     break;
 
-                case "JOIN":
+                case "JOIN": //Le serveur envoie une demande d'invitation
                     arg = evenement.getArgument();
                     System.out.println("Invitation reçu de " + arg);
                     break;
 
-                case "INV" :
+                case "INV" : //Le serveur a renvoyé la liste des invitations adressees au client
                     arg = evenement.getArgument();
-                    membres = arg.split(":");//remove " "
+                    membres = arg.split(":");//creer une liste a partir de la liste
                     int lMembres = membres.length;
 
                     if (lMembres == 0){
@@ -72,19 +72,19 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     }
                     break;
 
-                case "JOINOK":
+                case "JOINOK": //Le serveur cree un nouveau chat prive avec l'utilisateur specifie
                     arg = evenement.getArgument();
                     System.out.println("Nouveau chat privé avec "+arg);
                     break;
 
-                case "DECLINE" :
+                case "DECLINE" : //Le serveur supprime l'invitation avec l'utilisateur specifie
                     arg = evenement.getArgument();
                     System.out.println("Invitation refuse par " + arg);
                     break;
 
-                case "QUIT" :
+                case "QUIT" : //Le serveur ferme le salon avec l'utilisateur specifie
                     arg = evenement.getArgument();
-                    System.out.println("Vous quittez le salon avec " + arg); //quit?
+                    System.out.println("Vous quittez le salon avec " + arg);
                     break;
 
                 default: //Afficher le texte recu :
