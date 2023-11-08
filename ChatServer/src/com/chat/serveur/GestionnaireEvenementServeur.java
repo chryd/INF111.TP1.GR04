@@ -6,10 +6,10 @@ import com.chat.commun.net.Connexion;
 import java.util.*;
 
 /**
- * Cette classe représente un gestionnaire d'événement d'un serveur. Lorsqu'un serveur reçoit un texte d'un client,
- * il crée un événement à partir du texte reçu et alerte ce gestionnaire qui réagit en gérant l'événement.
+ * Cette classe reprï¿½sente un gestionnaire d'ï¿½vï¿½nement d'un serveur. Lorsqu'un serveur reï¿½oit un texte d'un client,
+ * il crï¿½e un ï¿½vï¿½nement ï¿½ partir du texte reï¿½u et alerte ce gestionnaire qui rï¿½agit en gï¿½rant l'ï¿½vï¿½nement.
  *
- * @author Abdelmoumène Toudeft (Abdelmoumene.Toudeft@etsmtl.ca)
+ * @author Abdelmoumï¿½ne Toudeft (Abdelmoumene.Toudeft@etsmtl.ca)
  * @version 1.0
  * @since 2023-09-01
  */
@@ -19,9 +19,9 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     private ArrayList<SalonPrive> privateList;
 
     /**
-     * Construit un gestionnaire d'événements pour un serveur.
+     * Construit un gestionnaire d'ï¿½vï¿½nements pour un serveur.
      *
-     * @param serveur Serveur Le serveur pour lequel ce gestionnaire gère des événements
+     * @param serveur Serveur Le serveur pour lequel ce gestionnaire gï¿½re des ï¿½vï¿½nements
      */
     public GestionnaireEvenementServeur(Serveur serveur) {
         this.serveur = serveur;
@@ -30,9 +30,9 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     }
 
     /**
-     * Méthode de gestion d'événements. Cette méthode contiendra le code qui gère les réponses obtenues d'un client.
+     * Mï¿½thode de gestion d'ï¿½vï¿½nements. Cette mï¿½thode contiendra le code qui gï¿½re les rï¿½ponses obtenues d'un client.
      *
-     * @param evenement L'événement à gérer.
+     * @param evenement L'ï¿½vï¿½nement ï¿½ gï¿½rer.
      */
     @Override
     public void traiter(Evenement evenement) {
@@ -48,13 +48,13 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
             System.out.println("SERVEUR-Recu : " + evenement.getType() + " " + evenement.getArgument());
             typeEvenement = evenement.getType();
             switch (typeEvenement) {
-                case "EXIT": //Ferme la connexion avec le client qui a envoyé "EXIT":
+                case "EXIT": //Ferme la connexion avec le client qui a envoyï¿½ "EXIT":
                     cnx.envoyer("END");
                     serveur.enlever(cnx);
                     cnx.close();
                     break;
 
-                case "LIST": //Envoie la liste des alias des personnes connectées :
+                case "LIST": //Envoie la liste des alias des personnes connectï¿½es :
                     cnx.envoyer("LIST " + serveur.list());
                     break;
 
@@ -125,6 +125,22 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 
                 /*case "CHESS":
                     break;*/
+                case "LIST": //Envoie la liste des alias des personnes connectï¿½es :
+                    cnx.envoyer("LIST " + serveur.list());
+                    break;
+
+                //Ajoutez ici dï¿½autres case pour gï¿½rer dï¿½autres commandes.
+
+                /**
+                 * Le case permettant l'envoie du message Ã  tous les utilisateurs hormis l'expÃ©diteur.
+                 */
+                case "MSG": //Envoie la liste des alias des personnes connectï¿½es :
+
+                    aliasExpediteur = cnx.getAlias();
+                    msg = aliasExpediteur + ">>" +evenement.getArgument();
+
+                    serveur.envoyerATousSauf(msg, aliasExpediteur);
+                    break;
 
                 default: //Renvoyer le texte recu convertit en majuscules :
                     msg = evenement.getType() + " " + evenement.getArgument().toUpperCase();
