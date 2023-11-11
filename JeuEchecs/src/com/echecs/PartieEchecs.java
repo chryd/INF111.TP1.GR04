@@ -1,8 +1,10 @@
 package com.echecs;
 
-import com.echecs.pieces.Piece;
+import com.echecs.pieces.*;
 import com.echecs.util.EchecsUtil;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.*;
 
 /**
  * Représente une partie de jeu d'échecs. Orcheste le déroulement d'une partie :
@@ -23,6 +25,16 @@ public class PartieEchecs {
     private char couleurJoueur1, couleurJoueur2;
 
     /**
+     * Si le roi a deja ete bouge
+     */
+    private boolean roiBouge;
+
+    /**
+     * Si la tour a deja ete bougee
+     */
+    private boolean tourBougee;
+
+    /**
      * La couleur de celui à qui c'est le tour de jouer (n ou b).
      */
     private char tour = 'b'; //Les blancs commencent toujours
@@ -35,6 +47,47 @@ public class PartieEchecs {
         echiquier = new Piece[8][8];
         //Placement des pièces :
 
+        //placement des pions
+        for(int i = 0; i < 8; i++){
+            echiquier[1][i] = new Pion('n');
+            echiquier[6][i] = new Pion('b');
+        }
+
+        //placement des tours
+        echiquier[0][0] = new Tour('n');
+        echiquier[0][7] = new Tour('n');
+        echiquier[7][0] = new Tour('b');
+        echiquier[7][7] = new Tour('b');
+
+        //placement des cavaliers
+        echiquier[0][1] = new Cavalier('n');
+        echiquier[0][6] = new Cavalier('n');
+        echiquier[7][1] = new Cavalier('b');
+        echiquier[7][6] = new Cavalier('b');
+
+        //placement des fous
+        echiquier[0][2] = new Fou('n');
+        echiquier[0][5] = new Fou('n');
+        echiquier[7][2] = new Fou('b');
+        echiquier[7][5] = new Fou('b');
+
+        //placement des dames
+        echiquier[0][3] = new Dame('n');
+        echiquier[7][3] = new Dame('b');
+
+        //placement des rois
+        echiquier[0][4] = new Roi('n');
+        echiquier[7][4] = new Roi('b');
+
+        Random rand = new Random();
+        if (rand.nextInt(2) == 0) {
+            couleurJoueur1 = 'b';
+            couleurJoueur2 = 'n';
+        } else {
+            couleurJoueur1 = 'n';
+            couleurJoueur2 = 'b';
+        }
+        tour = 'b';
     }
 
     /**
@@ -61,7 +114,73 @@ public class PartieEchecs {
      * @return boolean true, si le déplacement a été effectué avec succès, false sinon
      */
     public boolean deplace(Position initiale, Position finale) {
-         throw new NotImplementedException();
+
+        //Les positions initiale et finale sont valides
+        boolean positionsInvalides = initiale.getLigne() > 8 || initiale.getLigne() < 1 ||
+                                    finale.getLigne() > 8 || finale.getLigne() < 1 ||
+                                    initiale.getColonne() > 'h' || initiale.getColonne() < 'a' ||
+                                    finale.getColonne() > 'h' || finale.getColonne() < 'a';
+        if (positionsInvalides){
+            return false;
+        }
+
+        //piece a deplacer et position finale
+        int x1 = initiale.getColonne()-97;
+        int y1 = -(initiale.getLigne() - 8);
+        int x2 = finale.getColonne()-97;
+        int y2 = -(finale.getLigne() - 8);
+
+        Piece pInitial = echiquier[y1][x1];
+        Piece pFinal = echiquier[y2][x2];
+
+        //Il y a bien une pièce à déplacer à la position initiale;
+        if (pInitial == null){
+            return false;
+        }
+
+        //La couleur de la pièce à déplacer possède bien la couleur correspondant au jour qui a la main;
+        if (pInitial.getCouleur() != tour){
+            return false;
+        }
+
+        //Il n’y a pas à la position finale une pièce de même couleur que la pièce à déplacer;
+        if (pFinal.getCouleur() == tour){
+            return false;
+        }
+
+        //Si le joueur veut faire un roque, les conditions sont bien réunies.
+        boolean estUnRoi = pInitial instanceof Roi;
+        boolean roqueDeplacement = finale.estSurLaMemeLigneQue(initiale) && (x1 - 2 == x2 || x1 + 2 == x2);
+
+        if (estUnRoi && roqueDeplacement) {
+
+            //si le roi ou la tour ont deja bouges, roque invalide
+            if (roiBouge || tourBougee){
+                return false;
+            }
+
+            //verifie que les cases sont vides
+            //pour la grande roque
+            if (x2 < x1) {
+                //verifie qu'entre la colone b(1) et e(4), les cases sont vides
+                for (int i = 1; i < 4; i++) {
+                    if (echiquier[y1][i] != null) {
+                        return false;
+                    }
+                }
+            }
+
+            //pour la petite roque
+            else {
+                //verifie qu'entre la colone f(5) et h(8), les cases sont vides
+                for (int i = 5; i < 8; i++) {
+                    if (echiquier[y1][i] != null) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return pInitial.peutSeDeplacer(initiale, finale, echiquier);
     }
 
     /**

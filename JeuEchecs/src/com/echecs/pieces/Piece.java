@@ -28,4 +28,8 @@ public abstract class Piece {
      * @return boolean true, si la pièce peut se déplacer de la position pos1 à la position pos2, false sinon
      */
     public abstract boolean peutSeDeplacer(Position pos1, Position pos2, Piece echiquier[][]);
+
+    public boolean estVideA(Piece[][] echiquier, int x, int y){
+        return echiquier[y][x] == null;
+    }
 }
