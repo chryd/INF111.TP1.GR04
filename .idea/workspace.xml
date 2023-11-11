@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Cavalier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Dame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Fou.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Pion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Roi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Tour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/programme/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="partie 4 a 4.4, not tested">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/programme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/programme/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699471992013</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="partie 4 a 4.4, not tested">
+      <created>1699665999564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699665999564</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +211,7 @@
     <MESSAGE value="q3 fini, non teste, sauf priv" />
     <MESSAGE value="q3 fini, tested et patched, sauf priv :')" />
     <MESSAGE value="q3 fini, tested et patched, prv fini (join has some issues some times still)" />
-    <option name="LAST_COMMIT_MESSAGE" value="q3 fini, tested et patched, prv fini (join has some issues some times still)" />
+    <MESSAGE value="partie 4 a 4.4, not tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="partie 4 a 4.4, not tested" />
   </component>
 </project>
