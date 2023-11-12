@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="partie 4 a 4.4, not tested, better encapsulation and design">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/programme/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/programme/Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699670189887</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="4.5 fini, not tested, better encapsulation and design and comments almost finished">
+      <created>1699765184298</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699765184298</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +224,7 @@
     <MESSAGE value="q3 fini, tested et patched, prv fini (join has some issues some times still)" />
     <MESSAGE value="partie 4 a 4.4, not tested" />
     <MESSAGE value="partie 4 a 4.4, not tested, better encapsulation and design" />
-    <option name="LAST_COMMIT_MESSAGE" value="partie 4 a 4.4, not tested, better encapsulation and design" />
+    <MESSAGE value="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
   </component>
 </project>
