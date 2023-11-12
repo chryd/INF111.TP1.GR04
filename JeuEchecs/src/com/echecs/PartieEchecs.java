@@ -1,7 +1,6 @@
 package com.echecs;
 
 import com.echecs.pieces.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.*;
 
@@ -79,6 +78,7 @@ public class PartieEchecs {
         echiquier[0][4] = new Roi('n');
         echiquier[7][4] = new Roi('b');
 
+        //assigner de manier random une couleur aux joueurs
         Random rand = new Random();
         if (rand.nextInt(2) == 0) {
             couleurJoueur1 = 'b';
@@ -87,6 +87,8 @@ public class PartieEchecs {
             couleurJoueur1 = 'n';
             couleurJoueur2 = 'b';
         }
+
+        //assigner les attributs de bases
         tour = 'b';
         roiBouge = false;
         tour1Bougee = false;
@@ -105,6 +107,7 @@ public class PartieEchecs {
     }
 
     /**
+     *TBD
      *
      * @param position
      * @return
@@ -114,13 +117,14 @@ public class PartieEchecs {
     }
 
     /**
+     *TBD
      *
      * @param ligneInitiale
      * @param debut
      * @param fin
      * @return
      */
-    private boolean cheminEstVide(int ligneInitiale, int debut, int fin){
+    private boolean cheminEnLigneEstVide(int ligneInitiale, int debut, int fin){
         for (int i = debut; i < fin; i++) {
             if (echiquier[ligneInitiale][i] != null) {
                 return false;
@@ -130,6 +134,7 @@ public class PartieEchecs {
     }
 
     /**
+     *TBD
      *
      * @param colonneInitial
      * @param colonneFinale
@@ -138,28 +143,9 @@ public class PartieEchecs {
      */
     private boolean mouvementRoqueValide(int colonneInitial, int colonneFinale, int ligne){
         if (colonneFinale < colonneInitial) {
-            return !tour1Bougee && cheminEstVide(ligne, 1, 4);
+            return !tour1Bougee && cheminEnLigneEstVide(ligne, 1, 4);
         } else {
-            return !tour2Bougee && cheminEstVide(ligne, 5, 8);
-        }
-    }
-
-    /**
-     *
-     * @param colonneInitiale
-     * @param colonneFinale
-     * @param ligneInitiale
-     * @param ligneFinale
-     * @return
-     */
-    private boolean deplaceRoque(int colonneInitiale,  int colonneFinale, int ligneInitiale, int ligneFinale){
-        //si le roi ou la tour ont deja bouges, roque invalide
-        if (!roiBouge && mouvementRoqueValide(colonneInitiale, colonneFinale, ligneInitiale)){
-            echiquier[ligneFinale][colonneFinale] = echiquier[ligneInitiale][colonneInitiale];
-            echiquier[ligneInitiale][colonneInitiale] = null;
-            return true;
-        } else {
-            return false;
+            return !tour2Bougee && cheminEnLigneEstVide(ligne, 5, 8);
         }
     }
 
@@ -178,14 +164,13 @@ public class PartieEchecs {
      * @return boolean true, si le déplacement a été effectué avec succès, false sinon
      */
     public boolean deplace(Position initiale, Position finale) {
-        boolean succes = false;
 
-        //Les positions initiale et finale sont valides
+        //Verifie si les positions initiale et finale sont valides
         if (positionInvalides(initiale) || positionInvalides(finale)){
             return false;
         }
 
-        //piece a deplacer et position finale
+        //Definir les pieces a deplacer et les lignes et colonnes
         int colonneInitiale = initiale.getColonne()-'a';
         int ligneInitiale = -(initiale.getLigne() - 8);
         int colonneFinale = finale.getColonne()-'a';
@@ -204,24 +189,106 @@ public class PartieEchecs {
 
         //Si le joueur veut faire un roque, verifier si les conditions sont bien réunies.
         boolean estUnRoi = pieceInitial instanceof Roi;
-        boolean roqueDeplacement = finale.estSurLaMemeLigneQue(initiale) && (colonneInitiale - 2 == colonneFinale || colonneInitiale + 2 == colonneFinale);
+        boolean deplacementEnRoque = finale.estSurLaMemeLigneQue(initiale) &&
+                (colonneInitiale - 2 == colonneFinale || colonneInitiale + 2 == colonneFinale);
 
-        if (estUnRoi && roqueDeplacement) {
-            succes = deplaceRoque(colonneInitiale, colonneFinale, ligneInitiale, ligneFinale);
-        } else {
-            //verifier si effectue le deplacement est possible
-            if (!pieceInitial.peutSeDeplacer(initiale, finale, echiquier)) {
+        // verifier que le deplacement est valide
+        //en roque
+        if (estUnRoi && deplacementEnRoque) {
+            //impossible si le deplacement ne se fait pas en roque
+            if (!mouvementRoqueValide(colonneInitiale, colonneFinale, ligneInitiale)){
                 return false;
             }
-
-            //effectuer le deplacement
-            echiquier[ligneFinale][colonneFinale] = echiquier[ligneInitiale][colonneInitiale];
-            echiquier[ligneInitiale][colonneInitiale] = null;
-            succes = true;
+        //ou pour tout autre deplacement
+        } else {
+            //verifier que le deplacement est possible
+            if (!pieceInitial.peutSeDeplacer(initiale, finale, echiquier)){
+                return false;
+            }
         }
-        return succes;
+
+        //effectuer le deplacement
+        //la derniere ligne dependemment de la couleur
+        int derniereLigne;
+        if (tour == 'b') {
+            derniereLigne = 0;
+        } else {
+            derniereLigne = 7;
+        }
+
+        //Au cas ou le deplacement n'est pas valide car il mettrait le roi en echec
+        Piece pieceCapture = echiquier[ligneFinale][colonneFinale];
+
+        //pour le cas specifique de promotion de pion en dame
+        if (pieceInitial instanceof Pion && ligneFinale == derniereLigne){
+            echiquier[ligneFinale][colonneFinale] = new Dame(tour);
+        } else {
+            //sinon, deplacement normal
+            echiquier[ligneFinale][colonneFinale] = echiquier[ligneInitiale][colonneInitiale];
+        }
+
+        //supprimer la piece de la position initiale
+        echiquier[ligneInitiale][colonneInitiale] = null;
+
+        if (estEnEchec()==tour){
+            echiquier[ligneInitiale][colonneInitiale] = echiquier[ligneFinale][colonneFinale];
+            echiquier[ligneFinale][colonneFinale] = pieceCapture;
+            return false;
+        }
+
+        //deplacement reussi
+        changerTour();
+        return true;
     }
 
+    /**
+     *TBD
+     *
+     * @param couleur
+     * @return
+     */
+    private Position trouveRoi(char couleur){
+        for (int i = 0; i < 8; i++){
+            for (int j = 0; j < 8; j++){
+                if (echiquier[i][j] instanceof Roi && echiquier[i][j].getCouleur() == couleur){
+                    char colonne = (char) (j + 'a');
+                    byte ligne = (byte) -(i-8);
+                    return new Position(colonne,ligne);
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     *TBD
+     *
+     * @param couleur
+     * @param positionRoi
+     * @return
+     */
+    private boolean verifieEchec(char couleur, Position positionRoi){
+
+        for (int i = 0; i < 8; i++){
+            for (int j = 0; j < 8; j++){
+
+                Piece piece = echiquier[i][j];
+
+                if (piece != null){
+
+                    char colonne = (char) (j + 'a');
+                    byte ligne = (byte) -(i-8);
+                    Position position = new Position(colonne, ligne);
+
+                    if (piece.peutSeDeplacer(position, positionRoi, echiquier)){
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
     /**
      * Vérifie si un roi est en échec et, si oui, retourne sa couleur sous forme
      * d'un caractère n ou b.
@@ -235,7 +302,19 @@ public class PartieEchecs {
      * si le roi blanc est en échec, tout autre caractère, sinon.
      */
     public char estEnEchec() {
-            throw new NotImplementedException();
+        Position positionRoiB = trouveRoi('b');
+        Position positionRoiN = trouveRoi('n');
+        char couleurEnEchec;
+
+        if (verifieEchec('b', positionRoiB)){
+            couleurEnEchec = 'b';
+        } else if (verifieEchec('n', positionRoiN)) {
+            couleurEnEchec = 'n';
+        } else {
+            couleurEnEchec = 'x';
+        }
+
+        return couleurEnEchec;
     }
     /**
      * Retourne la couleur n ou b du joueur qui a la main.
