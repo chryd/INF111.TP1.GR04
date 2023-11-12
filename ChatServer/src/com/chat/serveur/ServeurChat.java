@@ -100,6 +100,10 @@ public class ServeurChat extends Serveur {
     /**
      * Méthode pour envoyer le message a tout les autres utilisateurs.
      */
+
+    //  Cette methode envoie la chaine str afin que tout les usager le recoit sauf
+    //  celui qui as l'alias de l'expediteur.
+
     public void envoyerATousSauf(String str, String aliasExpediteur) {
 
         for (Connexion utiliConnecter:connectes)

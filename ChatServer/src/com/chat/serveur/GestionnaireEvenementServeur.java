@@ -55,7 +55,10 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 /**
                  * Le case permettant l'envoie du message à tous les utilisateurs hormis l'expéditeur.
                  */
-                case "MSG": //Envoie la liste des alias des personnes connect�es :
+                case "MSG": /* il recupre l'alias de l'expediteur du message et ensuite on appelle
+                             la methode afin d'envoyer le message a tout sauf a l'expediteur du message. */
+
+
 
                     aliasExpediteur = cnx.getAlias();
                     msg = aliasExpediteur + ">>" +evenement.getArgument();
