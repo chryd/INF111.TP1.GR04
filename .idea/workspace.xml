@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="4.5 fini, not tested, better encapsulation and design and comments almost finished">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/Serveur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/Lecteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/Lecteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/ThreadEcouteurDeTexte.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/thread/ThreadEcouteurDeTexte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/programme/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/programme/Test.class" beforeDir="false" />
-    </list>
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="better structure" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699765184298</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="better structure">
+      <created>1699850439589</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699850439589</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +247,7 @@
     <MESSAGE value="partie 4 a 4.4, not tested" />
     <MESSAGE value="partie 4 a 4.4, not tested, better encapsulation and design" />
     <MESSAGE value="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
+    <MESSAGE value="better structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="better structure" />
   </component>
 </project>
