@@ -185,7 +185,7 @@ public class Serveur implements Lecteur {
      * arrive. Pour chaque texte qui arrive, elle crée un événement contenant les données du texte et demande au
      * gestionnaire d'événement serveur de traiter l'événement.
      */
-    public synchronized void lire() {
+    public synchronized void lire() throws ServeurChat.NonExistentUserException {
         ListIterator<Connexion> iterateur = connectes.listIterator();
         Connexion cnx;
         String[] t;
