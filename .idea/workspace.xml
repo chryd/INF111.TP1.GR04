@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="better structure" />
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="better structure">
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/CavalierTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/DameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PositionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/RoiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/TourTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,18 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/Labo/ca.ets.inf111.labo7/ca.ets.inf111.labo7&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/Labo/ca.ets.inf111.labo7/ca.ets.inf111.labo7",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.echecs.pieces" />
