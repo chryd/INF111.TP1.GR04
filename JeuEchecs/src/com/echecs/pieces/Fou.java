@@ -25,7 +25,7 @@ public class Fou extends Piece{
 
             for (int i = startX; i < endX; i++) {
                 for (int j = startY; j < endY; j++) {
-                    if (!estVideA(echiquier, i, j)) {
+                    if (!estVideA(i, j, echiquier)) {
                         return false;
                     }
                 }

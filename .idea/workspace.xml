@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="better structure">
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/CavalierTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/DameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PositionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/RoiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/TourTest.java" afterDir="false" />
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="unit testing added, not written but position">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/CavalierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/CavalierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/TourTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/TourTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Cavalier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Dame.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Dame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Fou.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Fou.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Pion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Tour.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,54 +39,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/Labo/ca.ets.inf111.labo7/ca.ets.inf111.labo7",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/Labo/ca.ets.inf111.labo7/ca.ets.inf111.labo7&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.echecs.pieces" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.echecs.programme.Main">
-    <configuration name="Main (1)" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
-      <module name="ChatClient" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chat.programme.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
-      <module name="ChatServer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chat.programme.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PartieEchecTest">
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
       <module name="ChatClient" />
@@ -137,20 +113,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CavalierTest.testConstructeur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JeuEchecs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echecs.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echecs.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.CavalierTest" />
+      <option name="METHOD_NAME" value="testConstructeur" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartieEchecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JeuEchecs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echecs.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echecs.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.com.echecs.programme.Main" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.playground" />
-      <item itemvalue="Application.Main (1)" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.CavalierTest.testConstructeur" />
+      <item itemvalue="JUnit.PartieEchecTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PartieEchecTest" />
+        <item itemvalue="JUnit.CavalierTest.testConstructeur" />
         <item itemvalue="Application.com.echecs.programme.Main" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.playground" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699850439589</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="unit testing added, not written but position">
+      <created>1699990885369</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699990885369</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,6 +277,7 @@
     <MESSAGE value="partie 4 a 4.4, not tested, better encapsulation and design" />
     <MESSAGE value="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
     <MESSAGE value="better structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="better structure" />
+    <MESSAGE value="unit testing added, not written but position" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit testing added, not written but position" />
   </component>
 </project>

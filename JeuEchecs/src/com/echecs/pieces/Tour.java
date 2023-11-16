@@ -23,7 +23,7 @@ public class Tour extends Piece{
 
         if (pos2.estSurLaMemeColonneQue(pos1)) {
             for (int i = startY; i < endY; i++) {
-                if (!estVideA(echiquier, x1, i)) {
+                if (!estVideA(x1, i, echiquier)) {
                     return false;
                 }
             }
@@ -32,7 +32,7 @@ public class Tour extends Piece{
 
         if (pos2.estSurLaMemeLigneQue(pos1)) {
             for (int i = startX; i < endX; i++) {
-                if (!estVideA(echiquier, i, y1)) {
+                if (!estVideA(i, y1, echiquier)) {
                     return false;
                 }
             }

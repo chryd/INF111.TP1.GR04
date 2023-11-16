@@ -36,19 +36,19 @@ public class Pion extends Piece{
 
             if (y2 == (y1 + movY)) {
                 //s'assurer qu'il n'y a aucune piece
-                return estVideA(echiquier, x2, y2);
+                return estVideA(x2, y2, echiquier);
             }
 
             //si on veut faire 2 pas
             if (y2 == (y1 + specialMovY)) {
 
                 //s'assurer que le premier pas peut se faire (la case est vide)
-                if (!estVideA(echiquier, x1, y1 + movY)){
+                if (estVideA(x1, y1 + movY, echiquier)){
                     return false;
                 }
 
                 //s'assurer qu'il n'y a pas de pieces
-                return estVideA(echiquier, x2, y2);
+                return estVideA(x2, y2, echiquier);
             }
 
             //Dans le cas d'une attaque
@@ -56,7 +56,7 @@ public class Pion extends Piece{
             //s'assurer que le movement se fait en diagonal et seulement dans la position possible
             if (pos2.estSurLaMemeDiagonaleQue(pos1) && y2 == y1 + movY) {
                 //s'assurer qu'il y a une pièce à la position finale
-                return !estVideA(echiquier, x2, y2);
+                return !estVideA(x2, y2, echiquier);
             }
         }
         return false;

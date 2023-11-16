@@ -29,7 +29,14 @@ public abstract class Piece {
      */
     public abstract boolean peutSeDeplacer(Position pos1, Position pos2, Piece echiquier[][]);
 
-    public boolean estVideA(Piece[][] echiquier, int x, int y){
+    /**
+     *
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    protected boolean estVideA(int x, int y, Piece[][] echiquier){
         return echiquier[y][x] == null;
     }
 }

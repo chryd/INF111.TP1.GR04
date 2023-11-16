@@ -1,9 +1,7 @@
 package com.echecs.Test;
 
 import com.echecs.*;
-import org.testng.annotations.*;
-
-import java.lang.reflect.*;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 

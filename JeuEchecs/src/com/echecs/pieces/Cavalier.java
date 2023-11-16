@@ -8,22 +8,24 @@ public class Cavalier extends Piece{
     }
 
     @Override
-    public boolean peutSeDeplacer(Position pos1, Position pos2, Piece[][] echiquier) {
+    public boolean peutSeDeplacer(Position positionInitiale, Position positionFinale, Piece[][] echiquier) {
 
-        int x1 = pos1.getColonne()-97;
-        int y1 = -(pos1.getLigne() - 8);
+        int colonneInitiale = positionInitiale.getColonne()-97;
+        int ligneInitiale = -(positionInitiale.getLigne() - 8);
 
-        int x2 = pos2.getColonne()-97;
-        int y2 = -(pos2.getLigne() - 8);
+        int colonneFinale = positionFinale.getColonne()-97;
+        int ligneFinale = -(positionFinale.getLigne() - 8);
 
-        if ( x2 == x1 + 2 || x2 == x1 - 2 ){
-            return y2 == y1 + 1 || y2 == y1 - 1;
+        boolean out;
+
+        if ( colonneFinale == colonneInitiale + 2 || colonneFinale == colonneInitiale - 2 ){
+            out = ligneFinale == ligneInitiale + 1 || ligneFinale == ligneInitiale - 1;
+        } else if ( colonneFinale == colonneInitiale + 1 || colonneFinale == colonneInitiale - 1 ){
+            out = ligneFinale == ligneInitiale + 2 || ligneFinale == ligneInitiale - 2;
+        } else {
+            out = false;
         }
 
-        if ( x2 == x1 + 1 || x2 == x1 - 1 ){
-            return y2 == y1 + 2 || y2 == y1 - 2;
-        }
-
-        return false;
+        return out;
     }
 }
