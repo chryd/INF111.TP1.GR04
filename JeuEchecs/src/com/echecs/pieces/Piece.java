@@ -36,7 +36,7 @@ public abstract class Piece {
      * @param y
      * @return
      */
-    protected boolean estVideA(int x, int y, Piece[][] echiquier){
+    protected static boolean echiquierEstVideA(int x, int y, Piece[][] echiquier){
         return echiquier[y][x] == null;
     }
 }

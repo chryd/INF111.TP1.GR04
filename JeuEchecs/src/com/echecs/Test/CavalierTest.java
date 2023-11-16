@@ -4,8 +4,7 @@ import com.echecs.*;
 import com.echecs.pieces.*;
 import org.junit.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CavalierTest{
     Piece cavalier = new Cavalier('n');
@@ -18,11 +17,28 @@ public class CavalierTest{
 
     @Test
     public void testPeutSeDeplacer(){
-        Position initiale = new Position('d', (byte) 5);
-        Position valide1 = new Position('c', (byte) 7);
-        Position valide2 = new Position('b', (byte) 6);
+        Position initiale = new Position('d', (byte) 4);
+        Position valide1 = new Position('c', (byte) 6);
+        Position valide2 = new Position('b', (byte) 5);
+        Position valide3 = new Position('e', (byte) 6);
+        Position valide4 = new Position('f', (byte) 5);
+        Position valide5 = new Position('e', (byte) 2);
+        Position valide6 = new Position('f', (byte) 3);
+        Position valide7 = new Position('b', (byte) 3);
+        Position valide8 = new Position('c', (byte) 2);
+
+        Position[] valides = {valide1, valide2,valide3,valide4, valide5,valide6, valide7, valide8};
 
         Position invalide = new Position('d', (byte) 7);
-        assertTrue(cavalier.peutSeDeplacer(initiale, ));
+
+        for (Position p : valides) {
+            assertTrue(cavalier.peutSeDeplacer(initiale, p, echiquier));
+        }
+        assertFalse(cavalier.peutSeDeplacer(initiale, invalide, echiquier));
+    }
+
+    @Test
+    public  void testEstVideA(){
+        assertTrue(Piece.echiquierEstVideA(0, 0, echiquier));
     }
 }
