@@ -48,35 +48,35 @@ public class PartieEchecs {
 
         //placement des pions
         for(int i = 0; i < 8; i++){
-            echiquier[1][i] = new Pion('n');
-            echiquier[6][i] = new Pion('b');
+            echiquier[i][1] = new Pion('n');
+            echiquier[i][6] = new Pion('b');
         }
 
         //placement des tours
         echiquier[0][0] = new Tour('n');
-        echiquier[0][7] = new Tour('n');
-        echiquier[7][0] = new Tour('b');
+        echiquier[7][0] = new Tour('n');
+        echiquier[0][7] = new Tour('b');
         echiquier[7][7] = new Tour('b');
 
         //placement des cavaliers
-        echiquier[0][1] = new Cavalier('n');
-        echiquier[0][6] = new Cavalier('n');
-        echiquier[7][1] = new Cavalier('b');
-        echiquier[7][6] = new Cavalier('b');
+        echiquier[1][0] = new Cavalier('n');
+        echiquier[6][0] = new Cavalier('n');
+        echiquier[1][7] = new Cavalier('b');
+        echiquier[6][7] = new Cavalier('b');
 
         //placement des fous
-        echiquier[0][2] = new Fou('n');
-        echiquier[0][5] = new Fou('n');
-        echiquier[7][2] = new Fou('b');
-        echiquier[7][5] = new Fou('b');
+        echiquier[2][0] = new Fou('n');
+        echiquier[5][2] = new Fou('n');
+        echiquier[2][7] = new Fou('b');
+        echiquier[5][7] = new Fou('b');
 
         //placement des dames
-        echiquier[0][3] = new Dame('n');
-        echiquier[7][3] = new Dame('b');
+        echiquier[3][0] = new Dame('n');
+        echiquier[3][7] = new Dame('b');
 
         //placement des rois
-        echiquier[0][4] = new Roi('n');
-        echiquier[7][4] = new Roi('b');
+        echiquier[4][0] = new Roi('n');
+        echiquier[4][7] = new Roi('b');
 
         //assigner de maniere aleatoire une couleur aux joueurs
         Random rand = new Random();
@@ -94,6 +94,14 @@ public class PartieEchecs {
         tour1Bougee = false;
         tour2Bougee = false;
 
+    }
+
+    public Piece[][] getEchiquier() {
+        Piece[][] output = new Piece[8][8];
+        for (int i = 0; i < 8; i++) {
+            output[i] = Arrays.copyOf(echiquier[i], 8);
+        }
+        return output;
     }
 
     /**
@@ -184,8 +192,8 @@ public class PartieEchecs {
         int colonneFinale = finale.getColonne()-'a';
         int ligneFinale = -(finale.getLigne() - 8);
 
-        Piece pieceInitial = echiquier[ligneInitiale][colonneInitiale];
-        Piece pieceFinal = echiquier[ligneFinale][colonneFinale];
+        Piece pieceInitial = echiquier[colonneInitiale][ligneInitiale];
+        Piece pieceFinal = echiquier[colonneFinale][ligneFinale];
 
         //Verifier si:
         // - Il y a bien une pièce à déplacer à la position initiale
@@ -227,35 +235,35 @@ public class PartieEchecs {
         }
 
         //Au cas ou le deplacement n'est pas valide car il mettrait le roi en echec
-        Piece pieceCapture = echiquier[ligneFinale][colonneFinale];
+        Piece pieceCapture = echiquier[colonneFinale][ligneFinale];
 
         //Pour le cas specifique de promotion de pion en dame
         if (pieceInitial instanceof Pion && ligneFinale == derniereLigne){
-            echiquier[ligneFinale][colonneFinale] = new Dame(tour);
+            echiquier[colonneFinale][ligneFinale] = new Dame(tour);
         } else {
             //sinon, deplacement normal
-            echiquier[ligneFinale][colonneFinale] = echiquier[ligneInitiale][colonneInitiale];
+            echiquier[colonneFinale][ligneFinale] = echiquier[colonneInitiale][ligneInitiale];
         }
 
         //Supprimer la piece de la position initiale
-        echiquier[ligneInitiale][colonneInitiale] = null;
+        echiquier[colonneInitiale][ligneInitiale] = null;
 
         if (estEnEchec()==tour){
             //supprimer le dernier tour
-            echiquier[ligneInitiale][colonneInitiale] = echiquier[ligneFinale][colonneFinale];
-            echiquier[ligneFinale][colonneFinale] = pieceCapture;
+            echiquier[colonneInitiale][ligneInitiale] = echiquier[ligneFinale][colonneFinale];
+            echiquier[colonneFinale][ligneFinale] = pieceCapture;
             return false;
         }
 
         //Deplacement reussi
 
         //Si on vient de bouger le roi pour la premiere fois
-        if (echiquier[ligneFinale][colonneFinale] instanceof Roi && !roiBouge){
+        if (echiquier[colonneFinale][ligneFinale] instanceof Roi && !roiBouge){
             roiBouge = true;
         }
 
         //Si on vient de bouger une des tours pour la premiere fois
-        if (echiquier[ligneFinale][colonneFinale] instanceof Tour){
+        if (echiquier[colonneFinale][ligneFinale] instanceof Tour){
             if(colonneInitiale == 0 && !tour1Bougee){
                 tour1Bougee = true;
             }
@@ -305,8 +313,8 @@ public class PartieEchecs {
         for (int i = 0; i < 8; i++){
             for (int j = 0; j < 8; j++){
                 if (echiquier[i][j] instanceof Roi && echiquier[i][j].getCouleur() == couleur){
-                    char colonne = (char) (j + 'a');
-                    byte ligne = (byte) -(i-8);
+                    char colonne = (char) (i + 'a');
+                    byte ligne = (byte) -(j-8);
                     return new Position(colonne,ligne);
                 }
             }
@@ -331,8 +339,8 @@ public class PartieEchecs {
                 if (piece != null) {
 
                     if (piece.getCouleur() != couleurRoi) {
-                        char colonne = (char) (j + 'a');
-                        byte ligne = (byte) -(i - 8);
+                        char colonne = (char) (i + 'a');
+                        byte ligne = (byte) -(j - 8);
                         Position position = new Position(colonne, ligne);
 
                         if (piece.peutSeDeplacer(position, positionRoi, echiquier)) {
@@ -366,7 +374,7 @@ public class PartieEchecs {
      */
     private boolean cheminEnLigneEstVide(int ligne, int debut, int fin){
         for (int i = debut; i < fin; i++) {
-            if (echiquier[ligne][i] != null) {
+            if (echiquier[i][ligne] != null) {
                 return false;
             }
         }

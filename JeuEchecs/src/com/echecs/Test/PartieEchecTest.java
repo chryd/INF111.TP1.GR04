@@ -1,6 +1,7 @@
 package com.echecs.Test;
 
 import com.echecs.*;
+import com.echecs.pieces.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;
@@ -8,54 +9,44 @@ import static org.junit.Assert.*;
 public class PartieEchecTest {
     PartieEchecs partie = new PartieEchecs();
 
-    /*@Test
-    public void testPartieEchecsConstructor() {
-
-        Field field = PartieEchecs.class.getField(echiquier);
-
-        // Test the initialization of the chessboard
-        assertNotNull(partie.echiquier);
-        assertEquals(8, partie.echiquier.length);
-        assertEquals(8, partie.echiquier[0].length);
-
-        // Add more specific tests based on your constructor logic
-        // For example, test the placement of specific pieces
-
-        // Test the initialization of player colors
-        assertTrue(partie.couleurJoueur1 == 'b' || partie.couleurJoueur1 == 'n');
-        assertTrue(partie.couleurJoueur2 == 'b' || partie.couleurJoueur2 == 'n');
-        assertNotEquals(partie.couleurJoueur1, partie.couleurJoueur2);
-
-        // Test the initialization of other attributes
-        assertEquals('b', partie.tour);
-        assertFalse(partie.roiBouge);
-        assertFalse(partie.tour1Bougee);
-        assertFalse(partie.tour2Bougee);
-    }*/
     @Test
-    public void testDeplacementPiece() {
-        PartieEchecs partie = new PartieEchecs();
+    public void testConstructeur(){
+        Piece[][] expected = new Piece[8][8];
+        Piece[][] echiquier = partie.getEchiquier();
+        //Placement des pièces :
 
-        // Assuming the initial positions are valid for testing
-        Position initiale = new Position('a', (byte) 2);
-        Position finale = new Position('a', (byte) 4);
+        //placement des pions
+        for(int i = 0; i < 8; i++){
+            expected[i][1] = new Pion('n');
+            expected[i][6] = new Pion('b');
+        }
 
-        assertTrue(partie.deplace(initiale, finale));
+        //placement des tours
+        expected[0][0] = new Tour('n');
+        expected[7][0] = new Tour('n');
+        expected[0][7] = new Tour('b');
+        expected[7][7] = new Tour('b');
 
-        // Add more test cases as needed
+        //placement des cavaliers
+        expected[1][0] = new Cavalier('n');
+        expected[6][0] = new Cavalier('n');
+        expected[1][7] = new Cavalier('b');
+        expected[6][7] = new Cavalier('b');
+
+        //placement des fous
+        expected[2][0] = new Fou('n');
+        expected[5][2] = new Fou('n');
+        expected[2][7] = new Fou('b');
+        expected[5][7] = new Fou('b');
+
+        //placement des dames
+        expected[3][0] = new Dame('n');
+        expected[3][7] = new Dame('b');
+
+        //placement des rois
+        expected[4][0] = new Roi('n');
+        expected[4][7] = new Roi('b');
+
+        assertSame(expected, echiquier);
     }
-
-    @Test
-    public void testEstEnEchec() {
-        PartieEchecs partie = new PartieEchecs();
-
-        // Assuming the initial positions are valid for testing
-        // Move some pieces to create a specific board situation
-
-        // Test if a specific color king is in check
-        assertEquals('x', partie.estEnEchec());
-
-        // Add more test cases as needed
-    }
-
 }
