@@ -36,9 +36,4 @@ public class CavalierTest{
         }
         assertFalse(cavalier.peutSeDeplacer(initiale, invalide, echiquier));
     }
-
-    @Test
-    public  void testEstVideA(){
-        assertTrue(Piece.echiquierEstVideA(0, 0, echiquier));
-    }
 }
