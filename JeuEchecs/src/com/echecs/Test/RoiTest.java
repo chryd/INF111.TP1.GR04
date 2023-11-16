@@ -2,14 +2,36 @@ package com.echecs.Test;
 
 import com.echecs.*;
 import com.echecs.pieces.*;
+import org.junit.*;
 
-public class RoiTest extends Piece {
-    public RoiTest(char couleur) {
-        super(couleur);
-    }
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
-    @Override
-    public boolean peutSeDeplacer(Position pos1, Position pos2, Piece[][] echiquier) {
-        return pos2.estVoisineDe(pos1);
-    }
+public class RoiTest {
+        Piece roi = new Roi('n');
+        Position initiale = new Position('d', (byte) 4);
+        Position diagonaleValide = new Position('c', (byte) 5);
+        Position colonneValide = new Position('d', (byte) 3);
+        Position ligneValide = new Position('e', (byte) 4);
+
+        Position[] valides = {diagonaleValide, colonneValide, ligneValide};
+        Piece[][] echiquier = new Piece[8][8];
+        @Test
+        public void testConstructeur(){
+            assertTrue(roi instanceof Roi);
+            assertEquals(roi.getCouleur(), 'n');
+        }
+
+        @Test
+        public void testPeutSeDeplacer() {
+            for (Position p : valides) {
+                assertTrue(roi.peutSeDeplacer(initiale, p, echiquier));
+            }
+        }
+        @Test
+        public void testPeutSeDeplacerInvalidePosition() {
+            Position invalide = new Position('e', (byte) 6);
+            assertFalse(roi.peutSeDeplacer(initiale, invalide, echiquier));
+        }
+
 }

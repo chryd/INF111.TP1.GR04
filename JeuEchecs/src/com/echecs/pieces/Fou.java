@@ -10,28 +10,40 @@ public class Fou extends Piece{
     @Override
     public boolean peutSeDeplacer(Position pos1, Position pos2, Piece[][] echiquier) {
 
-        int x1 = pos1.getColonne()-97;
-        int y1 = -(pos1.getLigne() - 8);
-        int x2 = pos2.getColonne()-97;
-        int y2 = -(pos2.getLigne() - 8);
+        //passer de la notation classique d'un echiquier aux valeurs dans la matrice
+        int colonneInitiale = pos1.getColonne()-97;
+        int ligneInitiale = -(pos1.getLigne() - 8);
+        int colonneFinale = pos2.getColonne()-97;
+        int ligneFinale = -(pos2.getLigne() - 8);
 
-        int startX = Math.min(x1, x2);
-        int endX = Math.max(x1, x2);
+        //determiner les coordonnes limite de l'iteration des case
+        int colonneStart = Math.min(colonneInitiale, colonneFinale);
+        int colonneEnd = Math.max(colonneInitiale, colonneFinale);
 
-        int startY = Math.min(y1, y2);
-        int endY = Math.max(y1, y2);
+        int ligneStart = Math.min(ligneInitiale, ligneFinale);
+        int ligneEnd = Math.max(ligneInitiale, ligneFinale);
 
+
+        //valeur a retourner
+        boolean output;
+
+        //Si la position 2 est sur le meme diagonale que la position 1
         if (pos2.estSurLaMemeDiagonaleQue(pos1)){
 
-            for (int i = startX; i < endX; i++) {
-                for (int j = startY; j < endY; j++) {
+            //verifier pour chaque case (autre que initial et final) qu'elle est vide
+            for (int i = colonneStart + 1; i < colonneEnd; i++) {
+                for (int j = ligneStart + 1; j < ligneEnd; j++) {
                     if (!echiquierEstVideA(i, j, echiquier)) {
-                        return false;
+                            return false;
                     }
                 }
             }
-            return true;
+            //si le chemin est libre, le deplacement est valide
+            output = true;
+        } else {
+            output = false;
         }
-        return false;
+
+        return output;
     }
 }

@@ -8,6 +8,12 @@ import static org.junit.Assert.*;
 
 public class DameTest {
     Piece dame = new Dame('n');
+    Position initiale = new Position('d', (byte) 4);
+    Position diagonaleValide = new Position('a', (byte) 7);
+    Position colonneValide = new Position('d', (byte) 1);
+    Position ligneValide = new Position('f', (byte) 4);
+
+    Position[] valides = {diagonaleValide, colonneValide, ligneValide};
     Piece[][] echiquier = new Piece[8][8];
     @Test
     public void testConstructeur(){
@@ -16,30 +22,28 @@ public class DameTest {
     }
 
     @Test
-    public void testPeutSeDeplacer(){
-        Position initiale = new Position('d', (byte) 4);
-        Position diagonaleValide = new Position('a', (byte) 7);
-        Position colonneValide = new Position('d', (byte) 1);
-        Position ligneValide = new Position('f', (byte) 4);
-
-        Position[] valides = {diagonaleValide, colonneValide, ligneValide};
-
+    public void testPeutSeDeplacer() {
         for (Position p : valides) {
             assertTrue(dame.peutSeDeplacer(initiale, p, echiquier));
         }
-
+    }
+    @Test
+    public void testPeutSeDeplacerInvalidePosition() {
         Position invalide = new Position('e', (byte) 6);
-
-        Piece inTheWay = new Pion('b');
-        echiquier[3][2] = inTheWay; //at c 5
-        echiquier[6][3] = inTheWay; //at d 3
-        echiquier[4][4] = inTheWay; //at e 4
-
-        for (Position p : valides) {
-            assertFalse(dame.peutSeDeplacer(initiale, p, echiquier));
-        }
-
         assertFalse(dame.peutSeDeplacer(initiale, invalide, echiquier));
+    }
+
+    @Test
+    public void testPeutSeDeplacerInTheWay() {
+        Piece inTheWay = new Pion('n');
+        echiquier[3][2] = inTheWay; //at C5 en diagonale
+        echiquier[3][6] = inTheWay; //at D3 en colonne
+        echiquier[4][4] = inTheWay; //at E4 en ligne
+
+        //assertFalse(dame.peutSeDeplacer(initiale, diagonaleValide, echiquier));
+        assertFalse(dame.peutSeDeplacer(initiale, colonneValide, echiquier));
+        assertFalse(dame.peutSeDeplacer(initiale, ligneValide, echiquier));
+
     }
 
 }

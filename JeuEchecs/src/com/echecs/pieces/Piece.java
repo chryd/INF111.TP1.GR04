@@ -32,11 +32,11 @@ public abstract class Piece {
     /**
      *
      *
-     * @param x
-     * @param y
+     * @param ligne
+     * @param colonne
      * @return
      */
-    protected static boolean echiquierEstVideA(int x, int y, Piece[][] echiquier){
-        return echiquier[y][x] == null;
+    protected static boolean echiquierEstVideA(int colonne, int ligne, Piece[][] echiquier){
+        return echiquier[colonne][ligne] == null;
     }
 }

@@ -9,56 +9,54 @@ public class Pion extends Piece{
 
     @Override
     public boolean peutSeDeplacer(Position pos1, Position pos2, Piece[][] echiquier) {
+        boolean output = false;
 
-        int x1 = pos1.getColonne()-97;
-        int y1 = -(pos1.getLigne() - 8);
-        int x2 = pos2.getColonne()-97;
-        int y2 = -(pos2.getLigne() - 8);
+        int colonneInitiale = pos1.getColonne()-97;
+        int ligneInitiale = -(pos1.getLigne() - 8);
+        int colonneFinale = pos2.getColonne()-97;
+        int ligneFinale = -(pos2.getLigne() - 8);
 
         //deplacement accepter en y
-        int movY = 1;
-        int specialMovY = 0;
+        int deplacement = 1;
+        int grandDeplacement = 0;
 
         //Cas ou le pion est encore a sa position initiale
-        if (y1 == 1 || y1 == 6){
-            specialMovY = 2;
+        if (ligneInitiale == 1 || ligneInitiale == 6){
+            grandDeplacement = 2;
         }
 
         //Si la couleur est blanche, le sens est inverse
-        if (couleur == 'b') {
-            movY = -1;
-            specialMovY = -2;
+        if (couleur == 'n') {
+            deplacement = deplacement * -1;
+            grandDeplacement = grandDeplacement * -1;
         }
 
         //Dans le cas d'un déplacement passif
         if (pos2.estSurLaMemeColonneQue(pos1)){
+
             //Si on veut effectuer un mouvement simple
-
-            if (y2 == (y1 + movY)) {
+            if (ligneFinale == (ligneInitiale + deplacement)) {
                 //s'assurer qu'il n'y a aucune piece
-                return echiquierEstVideA(x2, y2, echiquier);
-            }
+                output = echiquierEstVideA(colonneFinale, ligneFinale, echiquier);
 
-            //si on veut faire 2 pas
-            if (y2 == (y1 + specialMovY)) {
-
+                //si on veut faire 2 pas
+            } else if (ligneFinale == (ligneInitiale + grandDeplacement)) {
                 //s'assurer que le premier pas peut se faire (la case est vide)
-                if (echiquierEstVideA(x1, y1 + movY, echiquier)){
+                if (!echiquierEstVideA(colonneInitiale, ligneInitiale + deplacement, echiquier)){
                     return false;
                 }
-
                 //s'assurer qu'il n'y a pas de pieces
-                return echiquierEstVideA(x2, y2, echiquier);
+                output = echiquierEstVideA(colonneFinale, ligneFinale, echiquier);
             }
 
             //Dans le cas d'une attaque
-        } else {
+        } else if (pos2.estSurLaMemeDiagonaleQue(pos1) && ligneFinale == ligneInitiale + deplacement) {
             //s'assurer que le movement se fait en diagonal et seulement dans la position possible
-            if (pos2.estSurLaMemeDiagonaleQue(pos1) && y2 == y1 + movY) {
-                //s'assurer qu'il y a une pièce à la position finale
-                return !echiquierEstVideA(x2, y2, echiquier);
-            }
+            //s'assurer qu'il y a une pièce à la position finale
+            output = !echiquierEstVideA(colonneFinale, ligneFinale, echiquier);
+        } else {
+            output = false;
         }
-        return false;
+        return output;
     }
 }
