@@ -171,6 +171,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.PartieEchecTest.testTrouveRoi" />
       <item itemvalue="JUnit.PartieEchecTest" />
       <item itemvalue="JUnit.PartieEchecTest.testAttaquePion" />
       <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleBlanc" />
