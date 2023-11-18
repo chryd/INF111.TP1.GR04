@@ -46,7 +46,7 @@ public class Position {
         boolean notSame;
 
         voisineColonne = (this.colonne <= p.getColonne() + 1) && (this.colonne >= p.getColonne() - 1);
-        voisineLigne = (this.ligne <= p.getLigne() + 1) && (this.ligne >= p.getLigne() - 1);
+        voisineLigne = (this.ligne <= p.getLigne() + 1) && (this.colonne >= p.getLigne() - 1);
         notSame = !(this.colonne == p.getColonne() && this.ligne == p.getLigne());
 
         return voisineColonne && voisineLigne && notSame;
@@ -77,34 +77,5 @@ public class Position {
      */
     public boolean estSurLaMemeDiagonaleQue(Position p) {
         return Math.abs(this.colonne - p.getColonne()) == Math.abs(this.ligne - p.getLigne());
-    }
-
-    //A des fins de test
-    @Override
-    public String toString() {
-        return "Position{" +
-                "colonne=" + colonne +
-                ", ligne=" + ligne +
-                '}';
-    }
-
-    //A des fins de test
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Position position = (Position) o;
-
-        if (colonne != position.colonne) return false;
-        return ligne == position.ligne;
-    }
-
-    //A des fins de test
-    @Override
-    public int hashCode() {
-        int result = colonne;
-        result = 31 * result + (int) ligne;
-        return result;
     }
 }

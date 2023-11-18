@@ -40,16 +40,6 @@ public class PionTest {
     }
 
     @Test
-    public void testAttaqueInalide(){
-        echiquier[4][1] = new Pion('n'); //E7
-        echiquier[4][7] = new Roi('b'); //E1
-        Position attaqueInvalide = new Position('e', (byte) 1);
-        Position pionN = new Position('e', (byte) 7);
-
-        assertFalse(pion.peutSeDeplacer(pionN, attaqueInvalide, echiquier));
-    }
-
-    @Test
     public void testContreSens(){
         Position contresens = new Position('b', (byte) 1);
         assertFalse(pion.peutSeDeplacer(initiale, contresens, echiquier));

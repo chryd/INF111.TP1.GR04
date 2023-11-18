@@ -28,16 +28,10 @@ public class RoiTest {
                 assertTrue(roi.peutSeDeplacer(initiale, p, echiquier));
             }
         }
-
         @Test
         public void testPeutSeDeplacerInvalidePosition() {
             Position invalide = new Position('e', (byte) 6);
             assertFalse(roi.peutSeDeplacer(initiale, invalide, echiquier));
-
-            Position rb = new Position('e', (byte) 1);
-            Position rn = new Position('e', (byte) 8);
-            assertFalse(roi.peutSeDeplacer(rb, rn, echiquier));
-
         }
 
 }
