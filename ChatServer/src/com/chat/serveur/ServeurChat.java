@@ -95,12 +95,12 @@ public class ServeurChat extends Serveur {
     public Vector<String> historique = new Vector<String>();
     
     public String historique() {
-    	String s = "\n";
+    	String s = "";
     	if(historique != null && historique.size() > 0) {
     		Iterator<String> iterateur = historique.iterator();
  
 	    	while (iterateur.hasNext()) {
-	    	s = s + iterateur.next() + "\n"; 	   
+	    	s =  s  + iterateur.next() + "\n" ; 	   
             }
         }
         return s;
@@ -108,7 +108,6 @@ public class ServeurChat extends Serveur {
     public void ajouterHistorique(String nouveauMessage) {
     	
     		historique.add(nouveauMessage);
-    	
     
     }
     /**
