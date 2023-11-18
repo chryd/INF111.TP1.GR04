@@ -10,4 +10,28 @@ package com.chat.client;
  */
 public class ClientChat extends Client {
     //Cette classe est pour le moment vide et sera compléter dans le TP.
+
+
+
+    /*  Les déplacements de pièces validés par le serveur, feront une MAJ de l'etat de la partie.  */
+
+    EtatPartieEchecs partieMAJ;
+
+    public void setPartieMAJ(EtatPartieEchecs deplacementValide ){
+        this.partieMAJ = deplacementValide;
+    }
+
+    public EtatPartieEchecs  getPartieMAJ(){
+        return partieMAJ;
+    }
+
+
+    /*  Initialiser un nouvel objet EtatPartieEchecs  */
+
+    public void nouvellePartie()
+    {
+        this.partieMAJ = new EtatPartieEchecs();
+    }
+
+
 }

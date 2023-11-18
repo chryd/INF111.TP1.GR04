@@ -184,4 +184,5 @@ public class PartieEchecTest {
         boolean d3 = partie.deplace(c1, c2);
         assertTrue(d3);
     }
+
 }
