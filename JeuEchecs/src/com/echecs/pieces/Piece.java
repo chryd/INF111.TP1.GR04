@@ -27,7 +27,7 @@ public abstract class Piece {
      * @param echiquier Piece[][] Échiquier contenant les pièces d'une partie d'échecs
      * @return boolean true, si la pièce peut se déplacer de la position pos1 à la position pos2, false sinon
      */
-    public abstract boolean peutSeDeplacer(Position pos1, Position pos2, Piece echiquier[][]);
+    public abstract boolean peutSeDeplacer(Position pos1, Position pos2, Piece[][] echiquier);
 
     /**
      *
@@ -47,19 +47,15 @@ public abstract class Piece {
 
         int colonneFinale = positionFinale.getColonne()-97;
         int ligneFinale = -(positionFinale.getLigne() - 8);
-
-        boolean output;
-
+        
         Piece pieceInitiale = echiquier[colonneInitiale][ligneInitiale];
         Piece pieceFinale = echiquier[colonneFinale][ligneFinale];
 
-        if(!echiquierEstVideA(colonneFinale, ligneFinale, echiquier)){
-            output = pieceFinale.getCouleur() == pieceInitiale.getCouleur();
-        } else {
-            output = false;
+        if(echiquierEstVideA(colonneFinale, ligneFinale, echiquier)) {
+            return false;
         }
 
-        return output;
+        return pieceFinale.getCouleur() == pieceInitiale.getCouleur();
     }
 
     @Override

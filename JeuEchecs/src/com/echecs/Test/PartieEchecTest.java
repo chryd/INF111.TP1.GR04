@@ -55,7 +55,6 @@ public class PartieEchecTest {
                     Piece pPlanche = echiquier[i][j];
                     assertEquals(pExpected.getClass(), pPlanche.getClass());
                 } catch (NullPointerException e){
-                    continue;
                 }
             }
         }
@@ -86,62 +85,45 @@ public class PartieEchecTest {
 
     @Test
     public void testDeplacementPionSimpleBlanc(){
-        PartieEchecs nouvellePartie = new PartieEchecs();
-
         Position pb1 = new Position('e', (byte) 2);
         Position pb2 = new Position('e', (byte) 4);
 
-        System.out.println(nouvellePartie.getEchiquier()[4][6]);
-        System.out.println(nouvellePartie.getEchiquier()[4][4]);
-        boolean d1 = nouvellePartie.deplace(pb1, pb2);
+        boolean d1 = partie.deplace(pb1, pb2);
 
         assertTrue(d1);
     }
 
     @Test
     public void testDeplacementPionSimpleNoir(){
-        PartieEchecs nouvellePartie = new PartieEchecs();
-
         Position pb1 = new Position('e', (byte) 2);
         Position pb2 = new Position('e', (byte) 4);
 
         Position pn1 = new Position('f', (byte) 7);
         Position pn2 = new Position('f', (byte) 5);
-        boolean d1 = nouvellePartie.deplace(pb1, pb2);
+        boolean d1 = partie.deplace(pb1, pb2);
 
-        System.out.println(nouvellePartie.getEchiquier()[5][1]);
-        System.out.println(nouvellePartie.getEchiquier()[5][2]);
-        System.out.println(nouvellePartie.getEchiquier()[5][3]);
-        boolean d2 = nouvellePartie.deplace(pn1, pn2);
+        boolean d2 = partie.deplace(pn1, pn2);
 
         assertTrue(d2);
     }
 
     @Test
     public void testAttaquePion(){
-        PartieEchecs nouvellePartie = new PartieEchecs();
-
         Position pb1 = new Position('e', (byte) 2);
         Position pb2 = new Position('e', (byte) 4);
 
         Position pn1 = new Position('f', (byte) 7);
         Position pn2 = new Position('f', (byte) 5);
-        boolean d1 = nouvellePartie.deplace(pb1, pb2);
-        boolean d2 = nouvellePartie.deplace(pn1, pn2);
+        boolean d1 = partie.deplace(pb1, pb2);
+        boolean d2 = partie.deplace(pn1, pn2);
 
 
-        System.out.println(nouvellePartie.getEchiquier()[4][4]);
-        System.out.println(nouvellePartie.getEchiquier()[5][3]);
-        boolean d3 = nouvellePartie.deplace(pb2, pn2);
-        System.out.println(nouvellePartie.getEchiquier()[5][3]);
-
+        boolean d3 = partie.deplace(pb2, pn2);
         assertTrue(d3);
     }
 
     @Test
     public void testDameDiagonale(){
-        PartieEchecs nouvellePartie = new PartieEchecs();
-
         Position pb1 = new Position('e', (byte) 2);
         Position pb2 = new Position('e', (byte) 4);
 
@@ -154,19 +136,17 @@ public class PartieEchecTest {
         Position db1 = new Position('d', (byte) 1);
         Position db2 = new Position('h', (byte) 5);
 
-        boolean d1 = nouvellePartie.deplace(pb1, pb2);
-        boolean d2 = nouvellePartie.deplace(pn1, pn2);
-        boolean d3 = nouvellePartie.deplace(pb2, pn2);
-        boolean d4 = nouvellePartie.deplace(pn3, pn4);
-        boolean d5 = nouvellePartie.deplace(db1, db2);
+        boolean d1 = partie.deplace(pb1, pb2);
+        boolean d2 = partie.deplace(pn1, pn2);
+        boolean d3 = partie.deplace(pb2, pn2);
+        boolean d4 = partie.deplace(pn3, pn4);
+        boolean d5 = partie.deplace(db1, db2);
 
         assertTrue(d5);
     }
 
     @Test
     public void testEstEnEchec(){
-        PartieEchecs nouvellePartie = new PartieEchecs();
-
         Position pb1 = new Position('e', (byte) 2);
         Position pb2 = new Position('e', (byte) 4);
 
@@ -180,12 +160,28 @@ public class PartieEchecTest {
         Position rb2 = new Position('h', (byte) 5);
 
 
-        boolean d1 = nouvellePartie.deplace(pb1, pb2);
-        boolean d2 = nouvellePartie.deplace(pn1, pn2);
-        boolean d3 = nouvellePartie.deplace(pb2, pn2);
-        boolean d4 = nouvellePartie.deplace(pn3, pn4);
-        boolean d5 = nouvellePartie.deplace(rb1, rb2);
-        assertEquals(nouvellePartie.estEnEchec(), 'n');
+        boolean d1 = partie.deplace(pb1, pb2);
+        boolean d2 = partie.deplace(pn1, pn2);
+        boolean d3 = partie.deplace(pb2, pn2);
+        boolean d4 = partie.deplace(pn3, pn4);
+        boolean d5 = partie.deplace(rb1, rb2);
+        assertEquals(partie.estEnEchec(), 'n');
+    }
 
+    @Test
+    public void testScotchGame(){
+        Position pb1 = new Position('e', (byte) 2);
+        Position pb2 = new Position('e', (byte) 4);
+
+        Position pn1 = new Position('e', (byte) 7);
+        Position pn2 = new Position('e', (byte) 5);
+
+        Position c1 = new Position('g', (byte) 1);
+        Position c2 = new Position('f', (byte) 3);
+
+        boolean d1 = partie.deplace(pb1, pb2);
+        boolean d2 = partie.deplace(pn1, pn2);
+        boolean d3 = partie.deplace(c1, c2);
+        assertTrue(d3);
     }
 }

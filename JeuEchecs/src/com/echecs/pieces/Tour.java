@@ -1,6 +1,7 @@
 package com.echecs.pieces;
 
 import com.echecs.*;
+import com.echecs.util.*;
 
 public class Tour extends Piece{
     public Tour(char couleur) {
@@ -11,19 +12,18 @@ public class Tour extends Piece{
     public boolean peutSeDeplacer(Position positionInitiale, Position positionFinale, Piece[][] echiquier) {
 
         //passer de la notation classique d'un echiquier aux valeurs dans la matrice
-        int colonneInitiale = positionInitiale.getColonne()-97;
-        int ligneInitiale = -(positionInitiale.getLigne() - 8);
-        int colonneFinale = positionFinale.getColonne()-97;
-        int ligneFinale = -(positionFinale.getLigne() - 8);
+        int colonneInitiale = EchecsUtil.indiceColonne(positionInitiale);
+        int ligneInitiale = EchecsUtil.indiceLigne(positionInitiale);
+        int colonneFinale = EchecsUtil.indiceColonne(positionFinale);
+        int ligneFinale = EchecsUtil.indiceLigne(positionFinale);
 
         //determiner les coordonnes limite de l'iteration des case
         int colonneStart = Math.min(colonneInitiale, colonneFinale);
         int colonneEnd = Math.max(colonneInitiale, colonneFinale);
-
         int ligneStart = Math.min(ligneInitiale, ligneFinale);
         int ligneEnd = Math.max(ligneInitiale, ligneFinale);
 
-        //valeur a retourner
+        //valeur à retourner
         boolean ouptput;
 
         //Si la position 2 est sur la meme colonne que la position 1

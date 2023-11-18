@@ -79,6 +79,7 @@ public class Position {
         return Math.abs(this.colonne - p.getColonne()) == Math.abs(this.ligne - p.getLigne());
     }
 
+    //A des fins de test
     @Override
     public String toString() {
         return "Position{" +
@@ -87,6 +88,7 @@ public class Position {
                 '}';
     }
 
+    //A des fins de test
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,6 +100,7 @@ public class Position {
         return ligne == position.ligne;
     }
 
+    //A des fins de test
     @Override
     public int hashCode() {
         int result = colonne;
