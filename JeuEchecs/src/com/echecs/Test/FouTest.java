@@ -22,6 +22,7 @@ public class FouTest {
 
     @Test
     public void testPeutSeDeplacerBase() {
+
         assertTrue(fou.peutSeDeplacer(initiale, diagonaleValide, echiquier));
     }
 
@@ -44,7 +45,7 @@ public class FouTest {
     public void testPeutSeDeplacerInvalideIntheWay() {
         //
         Piece inTheWay = new Pion('n');
-        echiquier[2][4] = inTheWay; //at E6
+        echiquier[4][2] = inTheWay; //at E6
         assertFalse(fou.peutSeDeplacer(initiale, diagonaleValide, echiquier));
     }
 }
