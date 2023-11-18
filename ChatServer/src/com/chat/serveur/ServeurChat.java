@@ -92,11 +92,25 @@ public class ServeurChat extends Serveur {
      * @return String cha�ne de caract�res contenant la liste des alias des membres connect�s sous la
      * forme message1\nmessage2\nmessage3 ...
      */
+    public Vector<String> historique = new Vector<String>();
+    
     public String historique() {
-        String s = "";
+    	String s = "\n";
+    	if(historique != null && historique.size() > 0) {
+    		Iterator<String> iterateur = historique.iterator();
+ 
+	    	while (iterateur.hasNext()) {
+	    	s = s + iterateur.next() + "\n"; 	   
+            }
+        }
         return s;
+    	}
+    public void ajouterHistorique(String nouveauMessage) {
+    	
+    		historique.add(nouveauMessage);
+    	
+    
     }
-
     /**
      * Méthode pour trouver un utilisateur specifique
      *

@@ -254,6 +254,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     msg = aliasExpediteur + ">>" +evenement.getArgument();
 
                     serveur.envoyerATousSauf(msg, aliasExpediteur);
+                    serveur.ajouterHistorique(msg);
                     break;
 
                 default: //Renvoyer le texte recu convertit en majuscules :
