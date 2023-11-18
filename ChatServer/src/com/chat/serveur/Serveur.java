@@ -4,8 +4,8 @@ import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.EvenementUtil;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
-import com.chat.commun.thread.Lecteur;
-import com.chat.commun.thread.ThreadEcouteurDeTexte;
+import com.chat.serveur.thread.Lecteur;
+import com.chat.serveur.thread.ThreadEcouteurDeTexte;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -185,7 +185,7 @@ public class Serveur implements Lecteur {
      * arrive. Pour chaque texte qui arrive, elle crée un événement contenant les données du texte et demande au
      * gestionnaire d'événement serveur de traiter l'événement.
      */
-    public synchronized void lire() {
+    public synchronized void lire() throws ServeurChat.NonExistentUserException {
         ListIterator<Connexion> iterateur = connectes.listIterator();
         Connexion cnx;
         String[] t;

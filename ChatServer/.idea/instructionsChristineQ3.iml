@@ -1,0 +1,22 @@
+3.3. Permettre à un utilisateur alias1 d’envoyer une commande JOIN alias2 afin
+d’inviter la personne alias2 à chatter en privé ou d’accepter l’invitation qui lui a été
+préalablement envoyée par alias2. Le gestionnaire d’événement du serveur gère
+cette commande en :
+1. Vérifiant si alias2 a déjà envoyé une invitation à alias1, alors un salon privé
+est créé pour les 2 utilisateurs;
+2. Sinon, une invitation est créée et alias2 est informé de l’arrivée d’une
+invitation de alias1.
+3.4. Permettre à un utilisateur alias1 d’envoyer une commande DECLINE alias2 afin
+de refuser une invitation provenant de la personne alias2. Le gestionnaire
+d’événement du serveur gère cette commande en :
+1. Supprimant l’invitation;
+2. Informant alias2 que alias1 a refusé son invitation.
+La commande DECLINE servira aussi à un utilisateur alias1 d’annuler une invitation
+qu’il a préalablement envoyée à alias2.
+3.5. Permettre à un utilisateur alias1 d’envoyer une commande INV afin d’obtenir la
+liste de tous les alias des personnes qui lui ont envoyé des invitations.
+3.6. Permettre à un utilisateur alias1 d’envoyer une commande PRV alias2
+message afin d’envoyer un message privé à alias2, s’il y a un salon privé contenant
+alias1 et alias2.
+3.7. Permettre à un utilisateur alias1 d’envoyer une commande QUIT alias2 afin de
+quitter le salon privé dans lequel il se trouve avec alias2.

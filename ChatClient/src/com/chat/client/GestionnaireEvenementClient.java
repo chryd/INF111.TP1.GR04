@@ -49,6 +49,44 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     for (String s:membres)
                         System.out.println("\t\t\t- "+s);
                     break;
+
+                case "JOIN": //Le serveur envoie une demande d'invitation
+                    arg = evenement.getArgument();
+                    System.out.println("Invitation reçu de " + arg);
+                    break;
+
+                case "INV" : //Le serveur a renvoyé la liste des invitations adressees au client
+                    arg = evenement.getArgument();
+                    membres = arg.split(":");//creer une liste a partir de la liste
+                    int lMembres = membres.length;
+
+                    if (lMembres == 0){
+                        System.out.println("Pas d'invitation");
+                    } else {
+                        if (lMembres == 1) {
+                            System.out.println("\t\t" + lMembres + " personne qui vous a invite :");
+                        } else {
+                            System.out.println("\t\t" + lMembres + " personnes qui vous ont invite :");
+                        }
+                        for (String s:membres) System.out.println("\t\t\t- "+s);
+                    }
+                    break;
+
+                case "JOINOK": //Le serveur cree un nouveau chat prive avec l'utilisateur specifie
+                    arg = evenement.getArgument();
+                    System.out.println("Nouveau chat privé avec "+arg);
+                    break;
+
+                case "DECLINE" : //Le serveur supprime l'invitation avec l'utilisateur specifie
+                    arg = evenement.getArgument();
+                    System.out.println("Invitation refuse par " + arg);
+                    break;
+
+                case "QUIT" : //Le serveur ferme le salon avec l'utilisateur specifie
+                    arg = evenement.getArgument();
+                    System.out.println("Vous quittez le salon avec " + arg);
+                    break;
+
                 default: //Afficher le texte recu :
                     System.out.println("\t\t\t."+evenement.getType()+" "+evenement.getArgument());
             }

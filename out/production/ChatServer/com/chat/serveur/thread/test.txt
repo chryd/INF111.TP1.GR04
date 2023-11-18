@@ -1,0 +1,12 @@
+ /**
+     * Méthode pour envoyer le message a tout les autres utilisateurs.
+     */
+    public void envoyerATousSauf(String str, String aliasExpediteur) {
+        for (Connexion utiliConnecter:connectes)
+        {
+            if(utiliConnecter.getAlias()!=aliasExpediteur)
+            {
+                utiliConnecter.envoyer(str);
+            }
+        }
+    }

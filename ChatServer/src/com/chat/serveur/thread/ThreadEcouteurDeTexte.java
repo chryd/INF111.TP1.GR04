@@ -1,4 +1,6 @@
-package com.chat.commun.thread;
+package com.chat.serveur.thread;
+
+import com.chat.serveur.*;
 
 /**
  * Cette classe permet de créer des threads capables de lire continuellement sur un un objet de type Lecteur.
@@ -24,7 +26,11 @@ public class ThreadEcouteurDeTexte extends Thread {
      */
     public void run() {
         while (!interrupted()) {
-            lecteur.lire();
+            try {
+                lecteur.lire();
+            } catch (ServeurChat.NonExistentUserException e) {
+                throw new RuntimeException(e);
+            }
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

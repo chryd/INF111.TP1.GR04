@@ -1,5 +1,7 @@
 package com.chat.commun.evenement;
 
+import com.chat.serveur.*;
+
 /**
  * Cette interface représente un gestionnaire d'événement.
  *
@@ -14,5 +16,5 @@ public interface GestionnaireEvenement {
      *
      * @param evenement L'événement à gérer.
      */
-    void traiter(Evenement evenement);
+    void traiter(Evenement evenement) throws ServeurChat.NonExistentUserException;
 }
