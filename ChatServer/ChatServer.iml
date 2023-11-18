@@ -7,8 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="JeuEchecs" />
-    <orderEntry type="library" name="junit1" level="project" />
-    <orderEntry type="module" module-name="ChatClient" />
+    <orderEntry type="module" module-name="JeuEchecs" exported="" scope="PROVIDED" />
+    <orderEntry type="library" exported="" name="junit1" level="project" />
+    <orderEntry type="module" module-name="ChatClient" exported="" />
   </component>
 </module>

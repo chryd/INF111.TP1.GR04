@@ -254,8 +254,21 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     msg = aliasExpediteur + ">>" +evenement.getArgument();
 
                     serveur.envoyerATousSauf(msg, aliasExpediteur);
+                    serveur.ajouterHistorique(msg);
                     break;
-
+                    
+                case "HIST": //affiche l'historique
+                	//try 
+                	{
+                        //verifie que le nombre d'argument est adequat
+                        //evenement.checkArguments(0, 0);
+                        cnx.envoyer("HIST " + serveur.historique());
+                  //  } catch (IllegalArgumentException illegalArgumentException) { //dans le cas ou on a plus d'un evenement
+                  //      System.out.println("Format attendu  la commande: 'HIST'");
+                		}
+            
+                    break;
+                    
                 default: //Renvoyer le texte recu convertit en majuscules :
                     msg = evenement.getType() + " " + evenement.getArgument().toUpperCase();
                     cnx.envoyer(msg);

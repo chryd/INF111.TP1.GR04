@@ -1,6 +1,8 @@
 package com.echecs;
 
 import com.echecs.pieces.*;
+import com.echecs.util.*;
+
 import java.util.*;
 
 /**
@@ -11,7 +13,6 @@ import java.util.*;
  * @version 1.0
  * @since 2023-09-01
  */
-
 public class PartieEchecs {
     /**
      * Grille du jeu d'échecs. La ligne 0 de la grille correspond à la ligne
@@ -66,7 +67,7 @@ public class PartieEchecs {
 
         //placement des fous
         echiquier[2][0] = new Fou('n');
-        echiquier[5][2] = new Fou('n');
+        echiquier[5][0] = new Fou('n');
         echiquier[2][7] = new Fou('b');
         echiquier[5][7] = new Fou('b');
 
@@ -181,60 +182,32 @@ public class PartieEchecs {
     public boolean deplace(Position initiale, Position finale) {
 
         //Verifie si les positions initiale et finale sont valides
-        if (positionInvalides(initiale) || positionInvalides(finale)){
+        if (!EchecsUtil.positionValide(initiale) || !EchecsUtil.positionValide(finale)){
             return false;
         }
 
-        //Les pieces a deplacer et leurs lignes et leurs colonnes
-        int colonneInitiale = initiale.getColonne()-'a';
-        int ligneInitiale = -(initiale.getLigne() - 8);
-        int colonneFinale = finale.getColonne()-'a';
-        int ligneFinale = -(finale.getLigne() - 8);
+        //passer de la notation classique d'un echiquier aux valeurs dans la matrice
+        int colonneInitiale = EchecsUtil.indiceColonne(initiale);
+        int ligneInitiale = EchecsUtil.indiceLigne(initiale);
+        int colonneFinale = EchecsUtil.indiceColonne(finale);
+        int ligneFinale = EchecsUtil.indiceLigne(finale);
 
         Piece pieceInitial = echiquier[colonneInitiale][ligneInitiale];
-        Piece pieceFinal = echiquier[colonneFinale][ligneFinale];
+        Piece pieceCapture = echiquier[colonneFinale][ligneFinale];
 
-        //Verifier si:
-        // - Il y a bien une pièce à déplacer à la position initiale
-        // - La couleur de la pièce à déplacer possède bien la couleur correspondant au jour qui a la main
-        // - Il n’y a pas à la position finale une pièce de même couleur que la pièce à déplacer;
-        if (pieceInitial == null || pieceInitial.getCouleur() != tour || pieceFinal.getCouleur() == tour){
+        //verifier les conditions pour le deplacement
+        if (!checkConditionDeplace(pieceInitial, initiale, finale, colonneInitiale, colonneFinale, ligneInitiale)){
             return false;
-        }
-
-        //Conditions pour un roque
-        boolean estUnRoi = pieceInitial instanceof Roi;
-        boolean deplacementEnRoque = finale.estSurLaMemeLigneQue(initiale) &&
-                (colonneInitiale - 2 == colonneFinale || colonneInitiale + 2 == colonneFinale);
-
-        // Verifier que le deplacement est valide
-        //en roque
-        if (estUnRoi && deplacementEnRoque) {
-
-            if (!mouvementRoqueValide(colonneInitiale, colonneFinale, ligneInitiale)){
-                return false;
-            }
-
-        //ou pour tout autre deplacement
-        } else {
-
-            if (!pieceInitial.peutSeDeplacer(initiale, finale, echiquier)){
-                return false;
-            }
         }
 
         //Effectuer le deplacement
-
-        //la derniere ligne dependemment de la couleur
+        //derniere ligne dependemment de la couleur
         int derniereLigne;
         if (tour == 'b') {
             derniereLigne = 0;
         } else {
             derniereLigne = 7;
         }
-
-        //Au cas ou le deplacement n'est pas valide car il mettrait le roi en echec
-        Piece pieceCapture = echiquier[colonneFinale][ligneFinale];
 
         //Pour le cas specifique de promotion de pion en dame
         if (pieceInitial instanceof Pion && ligneFinale == derniereLigne){
@@ -254,23 +227,9 @@ public class PartieEchecs {
             return false;
         }
 
-        //Deplacement reussi
+        //changer les valeurs a changer
+        changeParamTour(ligneInitiale, ligneFinale, colonneInitiale, colonneFinale);
 
-        //Si on vient de bouger le roi pour la premiere fois
-        if (echiquier[colonneFinale][ligneFinale] instanceof Roi && !roiBouge){
-            roiBouge = true;
-        }
-
-        //Si on vient de bouger une des tours pour la premiere fois
-        if (echiquier[colonneFinale][ligneFinale] instanceof Tour){
-            if(colonneInitiale == 0 && !tour1Bougee){
-                tour1Bougee = true;
-            }
-            if(colonneInitiale == 7 && !tour2Bougee){
-                tour2Bougee = true;
-            }
-        }
-        changerTour();
         return true;
     }
 
@@ -319,7 +278,7 @@ public class PartieEchecs {
         //Conditions pour un roque
         boolean estUnRoi = pieceInitial instanceof Roi;
         boolean deplacementEnRoque = finale.estSurLaMemeLigneQue(initiale) &&
-                (Math.abs(colonneInitiale - colonneFinale) == 3 || Math.abs(colonneInitiale - colonneFinale) == 4 );
+                (colonneInitiale - 2 == colonneFinale || colonneInitiale + 2 == colonneFinale);
 
         // Verifier que le deplacement est valide
         //en roque
@@ -379,14 +338,14 @@ public class PartieEchecs {
         }
         changerTour();
     }
-    
+
     /**
      *Retourne la position du roi de la couleur specifiee
      *
      * @param couleur char couleur du roi recherché. 'b' pour représenter les blancs, 'n' pour représenter les noirs
      * @return Position la position du roi de la couleur spécifiée
      */
-    private Position trouveRoi(char couleur){
+    private Position trouveRoi(char couleur){ //back to priveee!!!!
         for (int i = 0; i < 8; i++){
             for (int j = 0; j < 8; j++){
                 if (echiquier[i][j] instanceof Roi && echiquier[i][j].getCouleur() == couleur){
@@ -417,7 +376,7 @@ public class PartieEchecs {
 
                     if (piece.getCouleur() != couleurRoi) {
                         char colonne = (char) (i + 'a');
-                        byte ligne = (byte) -(j - 8);
+                        byte ligne = (byte) (8 - j);
                         Position position = new Position(colonne, ligne);
 
                         if (piece.peutSeDeplacer(position, positionRoi, echiquier)) {
@@ -429,16 +388,6 @@ public class PartieEchecs {
         }
 
         return false;
-    }
-
-    /**
-     *Verifie que les valeurs de position sont valides
-     *
-     * @param position position a verifier
-     * @return boolean true si les valeurs sont valides, false sinon
-     */
-    private boolean positionInvalides(Position position){
-        return position.getLigne() > 8 || position.getLigne() < 1 || position.getColonne() > 'h' || position.getColonne() < 'a';
     }
 
     /**
@@ -470,7 +419,7 @@ public class PartieEchecs {
         if (colonneFinale < colonneInitial) {
             return !roiBouge && !tour1Bougee && cheminEnLigneEstVide(ligne, 1, 4);
         } else {
-            return !roiBouge && !tour2Bougee && cheminEnLigneEstVide(ligne, 5, 7);
+            return !roiBouge && !tour2Bougee && cheminEnLigneEstVide(ligne, 5, 8);
         }
     }
 }

@@ -1,44 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="blessed, deplacements normaux fonctionnent!!">
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/RoiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/RoiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Cavalier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Dame.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Dame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Fou.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Fou.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Pion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Roi.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Roi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/pieces/Tour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/programme/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/programme/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/FouTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/FouTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PartieEchecTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PartieEchecTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/RoiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/RoiTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Cavalier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Dame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Dame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Fou.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Pion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Roi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/programme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/programme/Main.class" afterDir="false" />
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/CavalierTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/DameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/FouTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PartieEchecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/RoiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/TourTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Cavalier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Dame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Fou.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Piece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Pion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Roi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Tour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/programme/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/util/EchecsUtil.java" beforeDir="false" />
     </list>
-=======
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="" />
->>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,17 +52,27 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/TP/INF111-A2023_TP1_V1/TP1.GR04&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/Labo/ca.ets.inf111.labo7/ca.ets.inf111.labo7&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.PartieEchecTest.testRoqueValide">
-    <configuration name="PartieEchecTest.testRoque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.echecs.pieces" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PartieEchecTest">
+    <configuration name="PartieEchecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JeuEchecs" />
       <extension name="coverage">
         <pattern>
@@ -74,13 +82,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.echecs.Test" />
       <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
-      <option name="METHOD_NAME" value="testRoque" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartieEchecTest.testAttaquePion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JeuEchecs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echecs.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echecs.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
+      <option name="METHOD_NAME" value="testAttaquePion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PartieEchecTest.testRoqueValide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PartieEchecTest.testDeplacementPionSimpleBlanc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JeuEchecs" />
       <extension name="coverage">
         <pattern>
@@ -90,29 +113,75 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.echecs.Test" />
       <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
-      <option name="METHOD_NAME" value="testRoqueValide" />
+      <option name="METHOD_NAME" value="testDeplacementPionSimpleBlanc" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartieEchecTest.testDeplacementPionSimpleNoir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JeuEchecs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echecs.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echecs.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
+      <option name="METHOD_NAME" value="testDeplacementPionSimpleNoir" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartieEchecTest.testNEstPasEnEchec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JeuEchecs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echecs.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echecs.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
+      <option name="METHOD_NAME" value="testNEstPasEnEchec" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartieEchecTest.testTrouveRoi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JeuEchecs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echecs.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echecs.Test" />
+      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
+      <option name="METHOD_NAME" value="testTrouveRoi" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-<<<<<<< Updated upstream
-      <item itemvalue="JUnit.PartieEchecTest.testRoque" />
-      <item itemvalue="JUnit.PartieEchecTest.testRoqueValide" />
-=======
       <item itemvalue="JUnit.PartieEchecTest.testTrouveRoi" />
       <item itemvalue="JUnit.PartieEchecTest" />
       <item itemvalue="JUnit.PartieEchecTest.testAttaquePion" />
       <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleBlanc" />
       <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleNoir" />
       <item itemvalue="JUnit.PartieEchecTest.testNEstPasEnEchec" />
->>>>>>> Stashed changes
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PartieEchecTest.testRoqueValide" />
-        <item itemvalue="JUnit.PartieEchecTest.testRoque" />
+        <item itemvalue="JUnit.PartieEchecTest" />
+        <item itemvalue="JUnit.PartieEchecTest.testAttaquePion" />
+        <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleNoir" />
+        <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleBlanc" />
+        <item itemvalue="JUnit.PartieEchecTest.testNEstPasEnEchec" />
       </list>
     </recent_temporary>
   </component>
@@ -125,6 +194,126 @@
       <option name="presentableId" value="Default" />
       <updated>1698339074312</updated>
     </task>
+    <task id="LOCAL-00001" summary="Classe invitation amelioree, wip pour levenement join">
+      <created>1698772189602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698772189602</updated>
+    </task>
+    <task id="LOCAL-00002" summary="q3 fini, non teste, sauf priv">
+      <created>1698784324567</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698784324567</updated>
+    </task>
+    <task id="LOCAL-00003" summary="q3 fini, tested et patched, sauf priv :')">
+      <created>1698794363818</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698794363818</updated>
+    </task>
+    <task id="LOCAL-00004" summary="q3 fini, tested et patched, prv fini (join has some issues some times still)">
+      <created>1698797250670</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698797250670</updated>
+    </task>
+    <task id="LOCAL-00005" summary="q3 fini, tested et patched, prv fini (join has some issues some times still)">
+      <created>1699471992013</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699471992013</updated>
+    </task>
+    <task id="LOCAL-00006" summary="partie 4 a 4.4, not tested">
+      <created>1699665999564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699665999564</updated>
+    </task>
+    <task id="LOCAL-00007" summary="partie 4 a 4.4, not tested, better encapsulation and design">
+      <created>1699670189887</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699670189887</updated>
+    </task>
+    <task id="LOCAL-00008" summary="4.5 fini, not tested, better encapsulation and design and comments almost finished">
+      <created>1699765184298</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699765184298</updated>
+    </task>
+    <task id="LOCAL-00009" summary="better structure">
+      <created>1699850439589</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699850439589</updated>
+    </task>
+    <task id="LOCAL-00010" summary="unit testing added, not written but position">
+      <created>1699990885369</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699990885369</updated>
+    </task>
+    <task id="LOCAL-00011" summary="unit testing added, not written but position">
+      <created>1700148694373</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700148694373</updated>
+    </task>
+    <task id="LOCAL-00012" summary="unit testing added, not written but position">
+      <created>1700149654700</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700149654700</updated>
+    </task>
+    <task id="LOCAL-00013" summary="unit testing added for dame, et estVideA -&gt; echiquierEstVideA est mtn static">
+      <created>1700150409184</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700150409184</updated>
+    </task>
+    <task id="LOCAL-00014" summary="unit testing and passed for all. comments added">
+      <created>1700162842345</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700162842345</updated>
+    </task>
+    <task id="LOCAL-00015" summary="colonne et ligne inversee">
+      <created>1700166277894</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700166277894</updated>
+    </task>
+    <task id="LOCAL-00016" summary="blessed, deplacements normaux fonctionnent!!">
+      <created>1700329953348</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700329953348</updated>
+    </task>
+    <task id="LOCAL-00017" summary="blessed, deplacements normaux fonctionnent!!">
+      <created>1700329964822</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700329964822</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,24 +321,59 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Question-3-Chatter-en-privé" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Classe invitation amelioree, wip pour levenement join" />
+    <MESSAGE value="q3 fini, non teste, suaf priv" />
+    <MESSAGE value="q3 fini, non teste, sauf priv" />
+    <MESSAGE value="q3 fini, tested et patched, sauf priv :')" />
+    <MESSAGE value="q3 fini, tested et patched, prv fini (join has some issues some times still)" />
+    <MESSAGE value="partie 4 a 4.4, not tested" />
+    <MESSAGE value="partie 4 a 4.4, not tested, better encapsulation and design" />
+    <MESSAGE value="4.5 fini, not tested, better encapsulation and design and comments almost finished" />
+    <MESSAGE value="better structure" />
+    <MESSAGE value="unit testing added, not written but position" />
+    <MESSAGE value="unit testing added for dame, et estVideA -&gt; echiquierEstVideA est mtn static" />
+    <MESSAGE value="unit testing and passed for all. comments added" />
+    <MESSAGE value="colonne et ligne inversee" />
+    <MESSAGE value="improved pieces" />
+    <MESSAGE value="blessed, deplacements normaux fonctionnent!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="blessed, deplacements normaux fonctionnent!!" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java</url>
-          <line>210</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java</url>
-          <line>198</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/FouTest.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

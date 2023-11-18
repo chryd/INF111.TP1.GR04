@@ -1,11 +1,9 @@
 package com.chat.client;
-
+import com.echecs.*;
 public class EtatPartieEchecs {
 
 
     /*  stocke l’état de l’échiquier avec un attribut */
-
-
     char [][] etatEchiquier = new char[8][8];
 
     public void setetatEchiquier(){
@@ -15,12 +13,11 @@ public class EtatPartieEchecs {
     public char getetatEchiquier(char etatEchiquier){
         return etatEchiquier;
     }
-
     /*  Initialise l’échiquier à l’état initial d’une partie d’échecs.  */
 
     public EtatPartieEchecs(){
 
-        for(int i=1; i<=6;i++)
+        /*for(int i=1; i<=6;i++)
         {
             for(int j=0; j<=7;j++)
             {
@@ -60,6 +57,17 @@ public class EtatPartieEchecs {
         this.etatEchiquier [0][5] = 'f';
         this.etatEchiquier [0][6] = 'c';
         this.etatEchiquier [0][7] = 't';
+         */
+        PartieEchecs nouvellePartie = new PartieEchecs();
+        for (int i = 0; i < 8; i++){
+            for (int j = 0 ; j < 8; j++){
+                if (nouvellePartie.getEchiquier()[i][j] instanceof ){
+
+                } else if {
+
+                }
+            }
+        }
 
     }
 
