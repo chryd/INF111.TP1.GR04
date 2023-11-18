@@ -1,6 +1,7 @@
 package com.echecs.pieces;
 
 import com.echecs.*;
+import com.echecs.util.*;
 
 public class Cavalier extends Piece{
     public Cavalier(char couleur) {
@@ -10,18 +11,22 @@ public class Cavalier extends Piece{
     @Override
     public boolean peutSeDeplacer(Position positionInitiale, Position positionFinale, Piece[][] echiquier) {
 
-        //passer de la notation classique d'un echiquier aux valeurs dans la matrice
-        int colonneInitiale = positionInitiale.getColonne()-97;
-        int ligneInitiale = -(positionInitiale.getLigne() - 8);
+        //S'il y a une piece de la meme couleur sur la position finale
+        if (estLaMemeCouleur(positionInitiale, positionFinale, echiquier)){
+            return false;
+        }
 
-        int colonneFinale = positionFinale.getColonne()-97;
-        int ligneFinale = -(positionFinale.getLigne() - 8);
+        //passer de la notation classique d'un echiquier aux valeurs dans la matrice
+        int colonneInitiale = EchecsUtil.indiceColonne(positionInitiale);
+        int ligneInitiale = EchecsUtil.indiceLigne(positionInitiale);
+        int colonneFinale = EchecsUtil.indiceColonne(positionFinale);
+        int ligneFinale = EchecsUtil.indiceLigne(positionFinale);
 
         boolean output;
 
-        if ( colonneFinale == colonneInitiale + 2 || colonneFinale == colonneInitiale - 2 ){
+        if (colonneFinale == colonneInitiale + 2 || colonneFinale == colonneInitiale - 2) {
             output = ligneFinale == ligneInitiale + 1 || ligneFinale == ligneInitiale - 1;
-        } else if ( colonneFinale == colonneInitiale + 1 || colonneFinale == colonneInitiale - 1 ){
+        } else if (colonneFinale == colonneInitiale + 1 || colonneFinale == colonneInitiale - 1) {
             output = ligneFinale == ligneInitiale + 2 || ligneFinale == ligneInitiale - 2;
         } else {
             output = false;
