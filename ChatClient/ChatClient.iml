@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="JeuEchecs" exported="" />
+    <orderEntry type="module" module-name="TP1.GR04" exported="" />
   </component>
 </module>
