@@ -1,10 +1,9 @@
-package com.echecs.Test;
-
-import com.echecs.*;
-import com.echecs.pieces.*;
-import org.junit.*;
+package echecs.Test;
 
 import static org.junit.Assert.*;
+import com.echecs.PartieEchecs;//echecs.Position;
+import echecs.pieces.*;
+import org.junit.Test;
 
 public class PartieEchecTest {
     PartieEchecs partie = new PartieEchecs();
@@ -12,7 +11,7 @@ public class PartieEchecTest {
     @Test
     public void testConstructeur(){
         Piece[][] expected = new Piece[8][8];
-        Piece[][] echiquier = partie.getEchiquier();
+        com.echecs.pieces.Piece[][] echiquier = partie.getEchiquier();
         //Placement des pièces :
 
         //placement des pions

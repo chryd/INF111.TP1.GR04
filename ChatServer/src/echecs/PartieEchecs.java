@@ -1,7 +1,10 @@
-package com.echecs;
+package echecs;
 
-import com.echecs.pieces.*;
-import java.util.*;
+import echecs.pieces.*;
+import com.echecs.Position;//echecs.Position;
+
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Représente une partie de jeu d'échecs. Orcheste le déroulement d'une partie :

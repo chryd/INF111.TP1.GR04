@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="unit testing and passed for all. comments added">
+      <change afterPath="$PROJECT_DIR$/ChatClient/src/com/chat/client/EtatPartieEchecs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/CavalierTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/DameTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/FouTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PartieEchecTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PositionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/RoiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/TourTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Cavalier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Dame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Fou.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Pion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Roi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Tour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/programme/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/util/EchecsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatClient/src/com/chat/client/ClientChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatClient/src/com/chat/client/ClientChat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/ChatServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/ChatServer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Test/PartieEchecTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/ClientChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/ClientChat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +54,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2XJF3HPKiEGnJiB2F24KQ8CMuGw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -40,19 +73,68 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/Labo/ca.ets.inf111.labo7/ca.ets.inf111.labo7&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Question5__Zouhair&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zouhair/Documents/GitHub/TP1.GR04/ChatServer/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Zouhair\Documents\GitHub\TP1.GR04\ChatServer\src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.echecs.pieces" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PartieEchecTest.testConstructeur">
+  <component name="RunManager" selected="Application.com.chat.programme.Main (1)">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="echecs.programme.Main" />
+      <module name="ChatServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="echecs.programme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.chat.programme.Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
+      <module name="ChatClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chat.programme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.chat.programme.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
+      <module name="ChatServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chat.programme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PartieEchecTest.testConstructeur" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JeuEchecs" />
       <extension name="coverage">
@@ -64,22 +146,6 @@
       <option name="PACKAGE_NAME" value="com.echecs.Test" />
       <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
       <option name="METHOD_NAME" value="testConstructeur" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PionTest.testAttaqueValide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PionTest" />
-      <option name="METHOD_NAME" value="testAttaqueValide" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,52 +167,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PionTest.testContreSens" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PionTest" />
-      <option name="METHOD_NAME" value="testContreSens" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PionTest.testPasDoubleInvalide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PionTest" />
-      <option name="METHOD_NAME" value="testPasDoubleInvalide" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.com.chat.programme.Main" />
+      <item itemvalue="Application.com.chat.programme.Main (1)" />
       <item itemvalue="JUnit.PartieEchecTest.testConstructeur" />
-      <item itemvalue="JUnit.PionTest.testAttaqueValide" />
       <item itemvalue="JUnit.PionTest.testAttaqueVide" />
-      <item itemvalue="JUnit.PionTest.testContreSens" />
-      <item itemvalue="JUnit.PionTest.testPasDoubleInvalide" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.chat.programme.Main (1)" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.com.chat.programme.Main" />
         <item itemvalue="JUnit.PartieEchecTest.testConstructeur" />
         <item itemvalue="JUnit.PionTest.testAttaqueVide" />
-        <item itemvalue="JUnit.PionTest.testPasDoubleInvalide" />
-        <item itemvalue="JUnit.PionTest.testContreSens" />
-        <item itemvalue="JUnit.PionTest.testAttaqueValide" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +192,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698339074312</updated>
+      <workItem from="1700174866916" duration="773000" />
+      <workItem from="1700192289515" duration="3615000" />
+      <workItem from="1700197710255" duration="262000" />
+      <workItem from="1700228563546" duration="16755000" />
+      <workItem from="1700313772545" duration="815000" />
+      <workItem from="1700314610659" duration="70000" />
+      <workItem from="1700314702337" duration="662000" />
+      <workItem from="1700316296882" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="Classe invitation amelioree, wip pour levenement join">
       <created>1698772189602</created>
@@ -259,6 +301,9 @@
     </task>
     <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
