@@ -278,7 +278,7 @@ public class PartieEchecs {
         //Conditions pour un roque
         boolean estUnRoi = pieceInitial instanceof Roi;
         boolean deplacementEnRoque = finale.estSurLaMemeLigneQue(initiale) &&
-                (colonneInitiale - 2 == colonneFinale || colonneInitiale + 2 == colonneFinale);
+                (Math.abs(colonneInitiale - colonneFinale) == 3 || Math.abs(colonneInitiale - colonneFinale) == 4 );
 
         // Verifier que le deplacement est valide
         //en roque
@@ -419,7 +419,7 @@ public class PartieEchecs {
         if (colonneFinale < colonneInitial) {
             return !roiBouge && !tour1Bougee && cheminEnLigneEstVide(ligne, 1, 4);
         } else {
-            return !roiBouge && !tour2Bougee && cheminEnLigneEstVide(ligne, 5, 8);
+            return !roiBouge && !tour2Bougee && cheminEnLigneEstVide(ligne, 5, 7);
         }
     }
 }

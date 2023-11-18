@@ -185,4 +185,65 @@ public class PartieEchecTest {
         assertTrue(d3);
     }
 
+    @Test
+    public void testRoque(){
+        Position pb1 = new Position('e', (byte) 2);
+        Position pb2 = new Position('e', (byte) 4);
+
+        Position pn1 = new Position('e', (byte) 7);
+        Position pn2 = new Position('e', (byte) 5);
+
+        Position c1 = new Position('g', (byte) 1);
+        Position c2 = new Position('f', (byte) 3);
+
+        Position pn3 = new Position('f', (byte) 7);
+        Position pn4 = new Position('f', (byte) 5);
+
+        Position rb = new Position('e', (byte) 1);
+        Position t2 = new Position('h', (byte) 1);
+
+
+
+        boolean d1 = partie.deplace(pb1, pb2);
+        boolean d2 = partie.deplace(pn1, pn2);
+        boolean d3 = partie.deplace(c1, c2);
+        boolean d4 = partie.deplace(pn3, pn4);
+        boolean roque = partie.deplace(rb, t2);
+
+        assertFalse(roque);
+    }    @Test
+    public void testRoqueValide(){
+        Position pb1 = new Position('e', (byte) 2);
+        Position pb2 = new Position('e', (byte) 4);
+
+        Position pn1 = new Position('e', (byte) 7);
+        Position pn2 = new Position('e', (byte) 5);
+
+        Position c1 = new Position('g', (byte) 1);
+        Position c2 = new Position('f', (byte) 3);
+
+        Position pn3 = new Position('f', (byte) 7);
+        Position pn4 = new Position('f', (byte) 6);
+
+        Position f1 = new Position('f', (byte) 1);
+        Position f2 = new Position('e', (byte) 2);
+
+        Position pn5 = new Position('f', (byte) 5);
+
+        Position rb = new Position('e', (byte) 1);
+        Position t2 = new Position('h', (byte) 1);
+
+
+
+        boolean d1 = partie.deplace(pb1, pb2);
+        boolean d2 = partie.deplace(pn1, pn2);
+        boolean d3 = partie.deplace(c1, c2);
+        boolean d4 = partie.deplace(pn3, pn4);
+        boolean d5 = partie.deplace(f1, f2);
+        boolean d6 = partie.deplace(pn4, pn5);
+        boolean roque = partie.deplace(rb, t2);
+
+        assertTrue(roque);
+    }
+
 }
