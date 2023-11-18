@@ -8,7 +8,10 @@ public class Roi extends Piece{
     }
 
     @Override
-    public boolean peutSeDeplacer(Position pos1, Position pos2, Piece[][] echiquier) {
-        return pos2.estVoisineDe(pos1);
+    public boolean peutSeDeplacer(Position positionInitiale, Position positionFinale, Piece[][] echiquier) {
+        if (estLaMemeCouleur(positionInitiale, positionFinale, echiquier)){
+            return false;
+        }
+        return positionFinale.estVoisineDe(positionInitiale);
     }
 }
