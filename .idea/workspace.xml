@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="blessed, deplacements normaux fonctionnent!!">
       <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/Position.java" afterDir="false" />
@@ -31,6 +32,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/programme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/programme/Main.class" afterDir="false" />
     </list>
+=======
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,8 +97,17 @@
       </method>
     </configuration>
     <list>
+<<<<<<< Updated upstream
       <item itemvalue="JUnit.PartieEchecTest.testRoque" />
       <item itemvalue="JUnit.PartieEchecTest.testRoqueValide" />
+=======
+      <item itemvalue="JUnit.PartieEchecTest.testTrouveRoi" />
+      <item itemvalue="JUnit.PartieEchecTest" />
+      <item itemvalue="JUnit.PartieEchecTest.testAttaquePion" />
+      <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleBlanc" />
+      <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleNoir" />
+      <item itemvalue="JUnit.PartieEchecTest.testNEstPasEnEchec" />
+>>>>>>> Stashed changes
     </list>
     <recent_temporary>
       <list>

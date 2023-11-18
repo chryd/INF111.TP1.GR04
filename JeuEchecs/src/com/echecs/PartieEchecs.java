@@ -302,7 +302,6 @@ public class PartieEchecs {
         return couleurEnEchec;
     }
 
-<<<<<<< HEAD
     private boolean checkConditionDeplace(Piece pieceInitial, Position initiale, Position finale, int colonneInitiale, int colonneFinale, int ligneInitiale){
         boolean output;
 
@@ -380,9 +379,7 @@ public class PartieEchecs {
         }
         changerTour();
     }
-
-=======
->>>>>>> parent of dc7f950 (Merge branch 'Q4')
+    
     /**
      *Retourne la position du roi de la couleur specifiee
      *
