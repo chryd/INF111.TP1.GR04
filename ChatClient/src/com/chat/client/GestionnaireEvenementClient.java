@@ -3,7 +3,6 @@ package com.chat.client;
 import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
-import com.chat.serveur.ServeurChat;
 
 /**
  * Cette classe reprÃ©sente un gestionnaire d'Ã©vÃ©nement d'un client. Lorsqu'un client reÃ§oit un texte d'un serveur,
@@ -89,22 +88,25 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     System.out.println("Vous quittez le salon avec " + arg);
                     break;
                     
-//                case "CHESS":
-//                	try {
-//                        //Verifie que le nombre d'arguments est adequat
+                case "CHESS":
+            		arg = evenement.getArgument();
+                    System.out.println("Invitation de jeu d'echec reçu de " + arg);
+//                    try {
+
+                        //Verifie que le nombre d'arguments est adequat
 //                        evenement.checkArguments(1,1);
-//
-//                        //definir les alias
+
+                        //definir les alias
 //                        aliasExpediteur = cnx.getAlias();
 //                        aliasArgs = evenement.getArgument();
-//
-//                        //verifie que l'utilisateur recherche existe
+
+                        //verifie que l'utilisateur recherche existe
 //                        serveur.checkIfConnected(aliasArgs);
-//                        
-//                        //vérifie s'il y a déja une partie en cours
-//                       // serveur.EtatPartieEchecs();
-//
-//                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
+                        
+                        //vérifie s'il y a déja une partie en cours
+                       // serveur.EtatPartieEchecs();
+
+                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
 //                        if (privateList.contains(salonPrive)) {
 //                            
 //                            //enovoyer les messages approprie aux clients
@@ -123,8 +125,8 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
 //                            throw e;
 //                        }
 //                    }
-//                		
-//                	break;    
+                		
+                	break;    
                     
                 case "MOVE":
                 	break;

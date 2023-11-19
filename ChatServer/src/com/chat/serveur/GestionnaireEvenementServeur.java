@@ -192,7 +192,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 case "INV": //Envoie la liste des alias des personnes qui on envoye une invitation au client :
                     try {
                         //verifie que le nombre d'argument est adequat
-                        evenement.checkArguments(0,0);
+                        evenement.checkArguments(0, 0);
 
                         //definir l'alias de l'expediteur
                         aliasExpediteur = cnx.getAlias();
@@ -209,7 +209,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                         //envoyer le liste au client
                         cnx.envoyer("INV " + listDInvitation);
                     } catch (IllegalArgumentException illegalArgumentException){
-                        System.out.println("Format attendu  la commande: 'INV'");
+                        System.out.println("illegalArgumentException : Format attendu  la commande: 'INV'");
                     }
                     break;
 
@@ -246,60 +246,60 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     }
                     break;
 
-//                case "CHESS":
-//                	try {
-//                        //Verifie que le nombre d'arguments est adequat
-//                        evenement.checkArguments(1,1);
-//
-//                        //definir les alias
-//                        aliasExpediteur = cnx.getAlias();
-//                        aliasArgs = evenement.getArgument();
-//
-//                        //verifie que l'utilisateur recherche existe
-//                        serveur.checkIfConnected(aliasArgs);
-//                        
-//                        //vérifie s'il y a déja une partie en cours
-//                       // serveur.EtatPartieEchecs();
-//
-//                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
-//                        if (privateList.contains(salonPrive)) {
-//                            
-//                            //enovoyer les messages approprie aux clients
-//                            //cnx.envoyer("CHESS " + aliasArgs);
-//                            serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
-//	                        
-//	                      //Creer une nouvelle invitation
-//	                        invitation = new Invitation(aliasExpediteur, aliasArgs);
-//	
-//	                        //Si une invitation entre ces utilisateurs a deja ete lance
-//	                        if (!invitationList.isEmpty() && invitationList.contains(invitation)) {
-//	
-//	                            //Un message pour signifier qu'un salon prive est ouvert est envoye aux deux utilisateurs
-//	                          // cote client:  cnx.envoyer("CHESSOK " + aliasArgs);
-//	                          // serveur.findAlias(aliasArgs).envoyer("JOINOK " + aliasExpediteur);
-//	                            privateList.add(new SalonPrive(aliasExpediteur, aliasArgs));
-//	
-//	                            //L'invitation est retire de la liste d'invitation
-//	                            invitationList.remove(invitation);
-//	                        } else {
-//	                            //sinon lancer une invitation
-//	                            invitationList.add(invitation);
-//	                            //Un message est envoye a l'invite pour lui signifier qu'on lui a envoye une invitation
-//	                            serveur.findAlias(aliasArgs).envoyer("JOIN " + aliasExpediteur);
-//	                        }
-//                        }
-//                        
-//                    } catch (Exception e) {
-//                        if (e instanceof IllegalArgumentException) {
-//                            System.out.println("Format attendu  la commande: 'CHESS alias'");
-//                        } else if (e instanceof ServeurChat.NonExistentUserException) {
-//                            System.out.println("Utilisateur non-existant");
-//                        } else {
-//                            throw e;
-//                        }
-//                    }
+                case "CHESS":
+                	try {
+                        //Verifie que le nombre d'arguments est adequat
+                        evenement.checkArguments(1,1);
+
+                        //definir les alias
+                        aliasExpediteur = cnx.getAlias();
+                        aliasArgs = evenement.getArgument();
+
+                        //verifie que l'utilisateur recherche existe
+                        serveur.checkIfConnected(aliasArgs);
+                        
+                        //vérifie s'il y a déja une partie en cours
+                       // serveur.EtatPartieEchecs();
+
+                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
+                        if (privateList.contains(salonPrive)) {
+                            
+                            //enovoyer les messages approprie aux clients
+                            //cnx.envoyer("CHESS " + aliasArgs);
+                            serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
+	                        
+	                      //Creer une nouvelle invitation
+	                        invitation = new Invitation(aliasExpediteur, aliasArgs);
+	
+	                        //Si une invitation entre ces utilisateurs a deja ete lance
+	                        if (!invitationList.isEmpty() && invitationList.contains(invitation)) {
+	
+	                            //Un message pour signifier qu'un salon prive est ouvert est envoye aux deux utilisateurs
+	                          // cote client:  cnx.envoyer("CHESSOK " + aliasArgs);
+	                          // serveur.findAlias(aliasArgs).envoyer("JOINOK " + aliasExpediteur);
+	                           // privateList.add(new SalonPrive(aliasExpediteur, aliasArgs));
+	
+	                            //L'invitation est retire de la liste d'invitation
+	                            invitationList.remove(invitation);
+	                        } else {
+	                            //sinon lancer une invitation
+	                            invitationList.add(invitation);
+	                            //Un message est envoye a l'invite pour lui signifier qu'on lui a envoye une invitation
+	                            serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
+	                        }
+                        }
+                        
+                    } catch (Exception e) {
+                        if (e instanceof IllegalArgumentException) {
+                            System.out.println("Format attendu  la commande: 'CHESS alias'");
+                        } else if (e instanceof ServeurChat.NonExistentUserException) {
+                            System.out.println("Utilisateur non-existant");
+                        } else {
+                            throw e;
+                        }
+                    }
                 		
-//                	break;
+                	break;
                 
                 case "MOVE":
                 	break;
