@@ -27,6 +27,7 @@ public class ClientChat extends Client {
     public void nouvellePartie()
     {
         this.etatPartieEchecs = new EtatPartieEchecs();
+        
     }
 
 

@@ -1,5 +1,5 @@
 package com.chat.client;
-
+import com.chat.client.ClientChat;
 import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
@@ -90,44 +90,20 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     
                 case "CHESS":
             		arg = evenement.getArgument();
-                    System.out.println("Invitation de jeu d'echec reçu de " + arg);
-//                    try {
-
-                        //Verifie que le nombre d'arguments est adequat
-//                        evenement.checkArguments(1,1);
-
-                        //definir les alias
-//                        aliasExpediteur = cnx.getAlias();
-//                        aliasArgs = evenement.getArgument();
-
-                        //verifie que l'utilisateur recherche existe
-//                        serveur.checkIfConnected(aliasArgs);
-                        
-                        //vérifie s'il y a déja une partie en cours
-                       // serveur.EtatPartieEchecs();
-
-                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
-//                        if (privateList.contains(salonPrive)) {
-//                            
-//                            //enovoyer les messages approprie aux clients
-//                            //cnx.envoyer("CHESS " + aliasArgs);
-//                            serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
-//                            // send cHESSOK if invitation is already there
-//                            serveur.findAlias(aliasArgs).envoyer("CHESSOK " + aliasExpediteur + "B");
-//                        }
-//
-//                    } catch (Exception e) {
-//                        if (e instanceof IllegalArgumentException) {
-//                            System.out.println("Format attendu  la commande: 'CHESS alias'");
-//                        } else if (e instanceof ServeurChat.NonExistentUserException) {
-//                            System.out.println("Utilisateur non-existant");
-//                        } else {
-//                            throw e;
-//                        }
-//                    }
-                		
+                    System.out.println("Invitation de jeu d'echec reçu de " + arg + " \n");
+                    
                 	break;    
                     
+                case "CHESSOK"://activation partie
+                	System.out.println("recu CHESSOK");  //debug
+                //	ClientChat chat1 = new ClientChat();
+
+//                	chat1.nouvellePartie();
+//
+//                	EtatPartieEchecs etatPartie = chat1.getEtatPartieEchecs();
+//                	System.out.println(etatPartie);
+         
+                	break;
                 case "MOVE":
                 	break;
                 case "ABANDON":

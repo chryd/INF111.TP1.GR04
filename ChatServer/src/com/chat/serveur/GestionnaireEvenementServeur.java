@@ -19,6 +19,11 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     private Serveur serveur;
     private ArrayList<Invitation> invitationList;
     private ArrayList<SalonPrive> privateList;
+    private String couleur_alias1;
+    private String couleur_alias2;
+    private String msg1;
+    private String msg2;
+    
 
     /**
      * Construit un gestionnaire d'ï¿½vï¿½nements pour un serveur.
@@ -258,9 +263,15 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                         //verifie que l'utilisateur recherche existe
                         serveur.checkIfConnected(aliasArgs);
                         
+                      
+                        
                         //vérifie s'il y a déja une partie en cours
                        // serveur.EtatPartieEchecs();
-
+                        
+                        //cree un nouveau salon sprive
+                        salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
+                        
+                        System.out.println("salon prive?: " + privateList.contains(salonPrive));  //debug
                       //si le salon est deja cree, envoyer le message a l'utilisateur specifie
                         if (privateList.contains(salonPrive)) {
                             
@@ -270,14 +281,40 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                        
 	                      //Creer une nouvelle invitation
 	                        invitation = new Invitation(aliasExpediteur, aliasArgs);
-	
+	                        
+	                        System.out.println("is there an invitation?:" + !invitationList.isEmpty());//debug
+	                        System.out.println("does it contain invitation from person?: " + invitationList.contains(invitation)); //debug
 	                        //Si une invitation entre ces utilisateurs a deja ete lance
 	                        if (!invitationList.isEmpty() && invitationList.contains(invitation)) {
-	
-	                            //Un message pour signifier qu'un salon prive est ouvert est envoye aux deux utilisateurs
-	                          // cote client:  cnx.envoyer("CHESSOK " + aliasArgs);
-	                          // serveur.findAlias(aliasArgs).envoyer("JOINOK " + aliasExpediteur);
-	                           // privateList.add(new SalonPrive(aliasExpediteur, aliasArgs));
+	                        	
+	                        //	System.out.println("alias1: " + salonPrive.getAlias1());  //debug
+	                        //	System.out.println("alias2: " + salonPrive.getAlias2()); //debug
+	                        	
+	                        	Random random;
+	                        	random = new Random();
+	                        	if (random.nextBoolean()) {
+	                        		 couleur_alias1 = "b";
+	                        		 couleur_alias2 = "n";
+	                        	} else
+	                        	{
+	                        		 couleur_alias1 = "n";
+	                        		 couleur_alias2 = "b";
+	                        	}
+	                        	
+	                            //Un message pour identifier leur couleur envoye aux deux utilisateurs
+	                            msg1 = "CHESSOK " + salonPrive.getAlias1() + " " + couleur_alias1;
+	                            msg2 = "CHESSOK " + salonPrive.getAlias2() + " " + couleur_alias2;
+	                            
+		                        System.out.println("msg1: " + msg1);  //debug
+		                        System.out.println("msg2: " + msg2);  //debug
+
+	                          //si le salon est deja cree, envoyer le message au deux utilisateur du salonPrive
+	                            if (privateList.contains(salonPrive)) {
+	                            	
+	                                serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
+	                                serveur.findAlias(salonPrive.getAlias2()).envoyer(msg2);
+
+	                            }
 	
 	                            //L'invitation est retire de la liste d'invitation
 	                            invitationList.remove(invitation);
@@ -285,7 +322,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                            //sinon lancer une invitation
 	                            invitationList.add(invitation);
 	                            //Un message est envoye a l'invite pour lui signifier qu'on lui a envoye une invitation
-	                            serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
+	            //                serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
 	                        }
                         }
                         
