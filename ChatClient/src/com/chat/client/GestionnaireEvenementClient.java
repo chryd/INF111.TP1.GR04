@@ -3,6 +3,7 @@ package com.chat.client;
 import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
+import com.chat.serveur.ServeurChat;
 
 /**
  * Cette classe représente un gestionnaire d'événement d'un client. Lorsqu'un client reçoit un texte d'un serveur,
@@ -47,7 +48,8 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     membres = arg.split(":");
                     System.out.println("\t\t"+membres.length+" personnes dans le salon :");
                     for (String s:membres)
-                        System.out.println("\t\t\t- "+s);
+
+
                     break;
 
                 case "JOIN": //Le serveur envoie une demande d'invitation
@@ -86,7 +88,50 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     arg = evenement.getArgument();
                     System.out.println("Vous quittez le salon avec " + arg);
                     break;
-
+                    
+//                case "CHESS":
+//                	try {
+//                        //Verifie que le nombre d'arguments est adequat
+//                        evenement.checkArguments(1,1);
+//
+//                        //definir les alias
+//                        aliasExpediteur = cnx.getAlias();
+//                        aliasArgs = evenement.getArgument();
+//
+//                        //verifie que l'utilisateur recherche existe
+//                        serveur.checkIfConnected(aliasArgs);
+//                        
+//                        //v�rifie s'il y a d�ja une partie en cours
+//                       // serveur.EtatPartieEchecs();
+//
+//                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
+//                        if (privateList.contains(salonPrive)) {
+//                            
+//                            //enovoyer les messages approprie aux clients
+//                            //cnx.envoyer("CHESS " + aliasArgs);
+//                            serveur.findAlias(aliasArgs).envoyer("CHESS " + aliasExpediteur);
+//                            // send cHESSOK if invitation is already there
+//                            serveur.findAlias(aliasArgs).envoyer("CHESSOK " + aliasExpediteur + "B");
+//                        }
+//
+//                    } catch (Exception e) {
+//                        if (e instanceof IllegalArgumentException) {
+//                            System.out.println("Format attendu  la commande: 'CHESS alias'");
+//                        } else if (e instanceof ServeurChat.NonExistentUserException) {
+//                            System.out.println("Utilisateur non-existant");
+//                        } else {
+//                            throw e;
+//                        }
+//                    }
+//                		
+//                	break;    
+                    
+                case "MOVE":
+                	break;
+                case "ABANDON":
+                	break;
+                    
+                    
                 default: //Afficher le texte recu :
                     System.out.println("\t\t\t."+evenement.getType()+" "+evenement.getArgument());
             }

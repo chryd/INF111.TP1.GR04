@@ -1,9 +1,20 @@
 package com.chat.serveur;
 
+import com.echecs.PartieEchecs;
+
 public class SalonPrive {
     private String alias1;
     private String alias2;
-
+    
+    private PartieEchecs partech;
+    public PartieEchecs getPartech() {
+    	return partech;
+    }
+    
+    public void setPartech(PartieEchecs c) {
+    	this.partech = c;
+    }
+    
     public SalonPrive(String alias1, String invitedAlias){
         this.alias1 = alias1;
         this.alias2 = invitedAlias;
