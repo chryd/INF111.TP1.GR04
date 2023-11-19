@@ -6,7 +6,7 @@ public class SalonPrive {
     private String alias1;
     private String alias2;
     
-    private PartieEchecs partech;
+    public PartieEchecs partech;
     
     public PartieEchecs getPartech() {
     	return partech;

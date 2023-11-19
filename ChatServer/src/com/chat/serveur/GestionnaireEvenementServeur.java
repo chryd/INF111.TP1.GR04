@@ -3,6 +3,8 @@ package com.chat.serveur;
 import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
+import com.echecs.PartieEchecs;
+import com.echecs.Position;
 import java.util.*;
 
 import static java.lang.Integer.MAX_VALUE;
@@ -19,8 +21,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
     private Serveur serveur;
     private ArrayList<Invitation> invitationList;
     private ArrayList<SalonPrive> privateList;
-    private String couleur_alias1;
-    private String couleur_alias2;
+    private char couleur_alias1;
+    private char couleur_alias2;
     private String msg1;
     private String msg2;
     
@@ -293,13 +295,20 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                        	Random random;
 	                        	random = new Random();
 	                        	if (random.nextBoolean()) {
-	                        		 couleur_alias1 = "b";
-	                        		 couleur_alias2 = "n";
+	                        		 couleur_alias1 = 'b';
+	                        		 couleur_alias2 = 'n';
 	                        	} else
 	                        	{
-	                        		 couleur_alias1 = "n";
-	                        		 couleur_alias2 = "b";
+	                        		 couleur_alias1 = 'n';
+	                        		 couleur_alias2 = 'b';
 	                        	}
+	                        	
+	                        	PartieEchecs partie = new PartieEchecs();
+	                        	
+	                        	// assigne joueur1/2 aux alias
+	                        	partie.setAliasJoueur1(salonPrive.getAlias1());
+	                        	partie.assignerAuJoueur1(couleur_alias1);
+	                        	partie.setAliasJoueur2(salonPrive.getAlias2());
 	                        	
 	                            //Un message pour identifier leur couleur envoye aux deux utilisateurs
 	                            msg1 = "CHESSOK " + salonPrive.getAlias1() + " " + couleur_alias1;
@@ -309,12 +318,12 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 		                        System.out.println("msg2: " + msg2);  //debug
 
 	                          //si le salon est deja cree, envoyer le message au deux utilisateur du salonPrive
-	                            if (privateList.contains(salonPrive)) {
+	                            //if (privateList.contains(salonPrive)) {
 	                            	
 	                                serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
 	                                serveur.findAlias(salonPrive.getAlias2()).envoyer(msg2);
 
-	                            }
+	                           // }
 	
 	                            //L'invitation est retire de la liste d'invitation
 	                            invitationList.remove(invitation);
@@ -339,6 +348,64 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 	break;
                 
                 case "MOVE":
+                    //definir les alias
+                    aliasExpediteur = cnx.getAlias();
+                    aliasArgs = evenement.getArgument();
+                	
+                	// extraire position de l'argument pour les mouvements a verifier 
+                	String arg = evenement.getArgument();
+                	
+                	// verifie le format accepte  (c3-e4, c3 e4 ou c3e4)
+                	if ((arg.length() == 5 && (arg.substring(2,1) == "-"|| arg.substring(2,1) == " ")) || arg.length() == 4 ) { 
+                		
+                	// prend les deux premiers caracteres
+                	Position posDebut = new Position( arg.charAt(0), Byte.parseByte(arg.substring(1,1)));
+                	// prend les deux derniers caracteres
+                	Position posFinal = new Position( arg.charAt(arg.length()-2), Byte.parseByte(arg.substring(arg.length()-2)));
+                	
+                	salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
+                	PartieEchecs partie = salonPrive.getPartech();
+                	                	System.out.println("debut: " + posDebut);  // debug
+                	System.out.println("final: " + posFinal);  // debug
+                	
+                	boolean works = partie.deplace(posDebut, posFinal);
+                	// works vérifie si déplacement fonctionne
+                	if (works) {
+                		//déplacement réussi donc change de tour
+                		if (partie.estEnEchec() != 'x')	
+                		{
+                			if (partie.estEnEchec() == couleur_alias1) {
+                				//Un message pour identifier leur couleur envoye aux deux utilisateurs
+                				msg1 = "ECHEC " + salonPrive.getAlias1();
+                			}
+                			else {
+                				msg1 = "ECHEC " + salonPrive.getAlias2();	
+                			}
+                        
+                			System.out.println("msg1: " + msg1);  //debug
+                			System.out.println("msg2: " + msg2);  //debug
+                			serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
+                			serveur.findAlias(salonPrive.getAlias2()).envoyer(msg1);
+                	
+                		}
+                		//change le tour
+                		partie.changerTour();
+                    }
+                	else {
+                    	 aliasExpediteur = cnx.getAlias();
+                         aliasArgs = evenement.getArgument();
+                         
+                         serveur.findAlias(aliasArgs).envoyer("INVALID :déplacement invalide" );
+                    }
+                	
+                	}
+                	else {
+                		//definir les alias
+                        aliasExpediteur = cnx.getAlias();
+                        aliasArgs = evenement.getArgument();
+                        
+                        serveur.findAlias(aliasArgs).envoyer("INVALID : structure de mouvement invalide" );
+                	}
                 	break;
                 
                 case "CHESSOK":

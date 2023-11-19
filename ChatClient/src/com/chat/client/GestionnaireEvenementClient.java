@@ -95,16 +95,19 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                 	break;    
                     
                 case "CHESSOK"://activation partie
-                	System.out.println("recu CHESSOK");  //debug
-                //	ClientChat chat1 = new ClientChat();
+                	arg = evenement.getArgument();
 
-//                	chat1.nouvellePartie();
-//
-//                	EtatPartieEchecs etatPartie = chat1.getEtatPartieEchecs();
-//                	System.out.println(etatPartie);
+                	System.out.println(" recu CHESSOK " + arg);  //debug
+                	ClientChat chat1 = new ClientChat();
+
+                	chat1.nouvellePartie();
+
+                	EtatPartieEchecs etatPartie = chat1.getEtatPartieEchecs();
+                	System.out.println(etatPartie);
          
                 	break;
                 case "MOVE":
+                	
                 	break;
                 case "ABANDON":
                 	break;

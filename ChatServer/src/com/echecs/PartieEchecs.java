@@ -2,7 +2,7 @@ package com.echecs;
 
 import com.echecs.pieces.*;
 import com.echecs.util.*;
-
+import com.echecs.Position;
 import java.util.*;
 
 /**
@@ -79,16 +79,6 @@ public class PartieEchecs {
         echiquier[4][0] = new Roi('n');
         echiquier[4][7] = new Roi('b');
 
-        //assigner de maniere aleatoire une couleur aux joueurs
-        Random rand = new Random();
-        if (rand.nextInt(2) == 0) {
-            couleurJoueur1 = 'b';
-            couleurJoueur2 = 'n';
-        } else {
-            couleurJoueur1 = 'n';
-            couleurJoueur2 = 'b';
-        }
-
         //assigner les attributs de bases
         tour = 'b';
         roiBouge = false;
@@ -163,6 +153,16 @@ public class PartieEchecs {
             tour = 'n';
         else
             tour = 'b';
+    }
+
+    public void assignerAuJoueur1(char couleur){
+        if (couleur == 'b') {
+            couleurJoueur1 = 'b';
+            couleurJoueur2 = 'n';
+        } else {
+            couleurJoueur1 = 'n';
+            couleurJoueur2 = 'b';
+        }
     }
 
     /**
