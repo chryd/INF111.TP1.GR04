@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Position.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/CavalierTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/DameTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/FouTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PartieEchecTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PositionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/RoiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/TourTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Cavalier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Dame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Fou.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Piece.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Pion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Roi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Tour.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/programme/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/util/EchecsUtil.java" beforeDir="false" />
+    <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="blessed, deplacements normaux fonctionnent!!">
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
