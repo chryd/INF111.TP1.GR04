@@ -358,46 +358,52 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 	// verifie le format accepte  (c3-e4, c3 e4 ou c3e4)
                 	if ((arg.length() == 5 && (arg.substring(2,1) == "-"|| arg.substring(2,1) == " ")) || arg.length() == 4 ) { 
                 		
-                	// prend les deux premiers caracteres
-                	Position posDebut = new Position( arg.charAt(0), Byte.parseByte(arg.substring(1,1)));
-                	// prend les deux derniers caracteres
-                	Position posFinal = new Position( arg.charAt(arg.length()-2), Byte.parseByte(arg.substring(arg.length()-2)));
-                	
-                	salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
-                	PartieEchecs partie = salonPrive.getPartech();
-                	                	System.out.println("debut: " + posDebut);  // debug
-                	System.out.println("final: " + posFinal);  // debug
-                	
-                	boolean works = partie.deplace(posDebut, posFinal);
-                	// works vérifie si déplacement fonctionne
-                	if (works) {
-                		//déplacement réussi donc change de tour
-                		if (partie.estEnEchec() != 'x')	
-                		{
-                			if (partie.estEnEchec() == couleur_alias1) {
-                				//Un message pour identifier leur couleur envoye aux deux utilisateurs
-                				msg1 = "ECHEC " + salonPrive.getAlias1();
-                			}
-                			else {
-                				msg1 = "ECHEC " + salonPrive.getAlias2();	
-                			}
-                        
-                			System.out.println("msg1: " + msg1);  //debug
-                			System.out.println("msg2: " + msg2);  //debug
-                			serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
-                			serveur.findAlias(salonPrive.getAlias2()).envoyer(msg1);
-                	
-                		}
-                		//change le tour
-                		partie.changerTour();
-                    }
-                	else {
-                    	 aliasExpediteur = cnx.getAlias();
-                         aliasArgs = evenement.getArgument();
-                         
-                         serveur.findAlias(aliasArgs).envoyer("INVALID :déplacement invalide" );
-                    }
-                	
+	                	// prend les deux premiers caracteres
+	                	Position posDebut = new Position( arg.charAt(0), Byte.parseByte(arg.substring(1,1)));
+	                	// prend les deux derniers caracteres
+	                	Position posFinal = new Position( arg.charAt(arg.length()-2), Byte.parseByte(arg.substring(arg.length()-2)));
+	                	
+	                	salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
+	                	PartieEchecs partie = salonPrive.getPartech();
+	                	System.out.println("debut: " + posDebut);  // debug
+	                	System.out.println("final: " + posFinal);  // debug
+	                	
+	                	boolean works = partie.deplace(posDebut, posFinal);
+	                	// works vérifie si déplacement fonctionne
+	                	if (works) {
+	                		//déplacement réussi donc change de tour
+	                		if (partie.estEnEchec() != 'x')	
+	                		{
+	                			if (partie.estEnEchec() == couleur_alias1) {
+	                				//Un message pour identifier leur couleur envoye aux deux utilisateurs
+	                				msg1 = "ECHEC " + salonPrive.getAlias1();
+	                			}
+	                			else {
+	                				msg1 = "ECHEC " + salonPrive.getAlias2();	
+	                			}
+	                        
+	                			System.out.println("To client: " + msg1);  //debug
+
+	                			serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
+	                			serveur.findAlias(salonPrive.getAlias2()).envoyer(msg1);
+	                	
+	                		}
+	                		msg1 = "MOVE" + arg.substring(0,2) + arg.substring(arg.length()-2);	
+	    
+		        			System.out.println("to both client: " + msg1);  //debug
+		        			serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
+		        			serveur.findAlias(salonPrive.getAlias2()).envoyer(msg1);
+	
+	                		//change le tour
+	                		partie.changerTour();
+	                    }
+	                	else {
+	                    	 aliasExpediteur = cnx.getAlias();
+	                         aliasArgs = evenement.getArgument();
+	                         
+	                         serveur.findAlias(aliasArgs).envoyer("INVALID :déplacement invalide" );
+	                    }
+	                	
                 	}
                 	else {
                 		//definir les alias
@@ -412,6 +418,9 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 	// start partie
                 	break;
                 	
+                case "ABANDON":
+                	
+                	break;
                 	
                 case "MSG": //Envoie la liste des alias des personnes connectï¿½es :
                     aliasExpediteur = cnx.getAlias();

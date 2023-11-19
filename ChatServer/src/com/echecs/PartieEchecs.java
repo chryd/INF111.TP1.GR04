@@ -201,6 +201,7 @@ public class PartieEchecs {
         }
 
         //Effectuer le deplacement
+        
         //derniere ligne dependemment de la couleur
         int derniereLigne;
         if (tour == 'b') {
