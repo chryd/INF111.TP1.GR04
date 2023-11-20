@@ -351,24 +351,31 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     //definir les alias
                     aliasExpediteur = cnx.getAlias();
                     aliasArgs = evenement.getArgument();
-                	
+                    cnx.envoyer(aliasArgs);
                 	// extraire position de l'argument pour les mouvements a verifier 
                 	String arg = evenement.getArgument();
                 	
                 	// verifie le format accepte  (c3-e4, c3 e4 ou c3e4)
-                	if ((arg.length() == 5 && (arg.substring(2,1) == "-"|| arg.substring(2,1) == " ")) || arg.length() == 4 ) { 
+                	if ((arg.length() == 5 && (arg.contains("-")|| arg.contains(" ")) || arg.length() == 4 )) { 
                 		
 	                	// prend les deux premiers caracteres
-	                	Position posDebut = new Position( arg.charAt(0), Byte.parseByte(arg.substring(1,1)));
+                		System.out.println(arg);// debug
+//                		System.out.println(arg.substring(1,2));// debug
+                		System.out.println(Byte.parseByte(arg.substring(1,2)));// debug
+	                	Position posDebut = new Position( arg.charAt(0), Byte.parseByte(arg.substring(1,2)));
 	                	// prend les deux derniers caracteres
-	                	Position posFinal = new Position( arg.charAt(arg.length()-2), Byte.parseByte(arg.substring(arg.length()-2)));
-	                	
+	                	Position posFinal = new Position(arg.charAt(arg.length()-2), Byte.parseByte(arg.substring(arg.length()-1)));
+	                	System.out.println(arg.charAt(arg.length()-2));// debug
+	                	System.out.println(arg.substring(arg.length()-1));// debug
+	                			
 	                	salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
-	                	PartieEchecs partie = salonPrive.getPartech();
+	                	PartieEchecs partie = new PartieEchecs();
+	                			//salonPrive.getPartech();
 	                	System.out.println("debut: " + posDebut);  // debug
-	                	System.out.println("final: " + posFinal);  // debug
+	                	System.out.println("final: " + posFinal.toString());  // debug
 	                	
 	                	boolean works = partie.deplace(posDebut, posFinal);
+	                	System.out.println(works);
 	                	// works vérifie si déplacement fonctionne
 	                	if (works) {
 	                		//déplacement réussi donc change de tour
@@ -418,10 +425,26 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 	// start partie
                 	break;
                 	
-                case "ABANDON":
-                	
-                	break;
-                	
+                case "ABANDON": //Envoie la liste des alias des personnes connectï¿½es :
+                    System.out.println("ON entre dans abandon");
+                    aliasExpediteur = cnx.getAlias();
+                    Connexion receveur;
+                    salonPrive = privateList.get(0);
+                    if(salonPrive.getAlias1().equals(aliasExpediteur))
+                    {
+                        receveur = serveur.findAlias(salonPrive.getAlias2());
+                        cnx.envoyer("Vous avez perdu la partie !");
+                        receveur.envoyer("Vous avez gagner la partie !");
+                    }
+                    else {
+                        receveur = serveur.findAlias(salonPrive.getAlias1());
+                        cnx.envoyer("Vous avez perdu la partie !");
+                        receveur.envoyer("Vous avez gagner la partie !");
+                    }
+                    salonPrive.setPartech(null);
+
+                    break;
+                    
                 case "MSG": //Envoie la liste des alias des personnes connectï¿½es :
                     aliasExpediteur = cnx.getAlias();
                     msg = aliasExpediteur + ">>" +evenement.getArgument();

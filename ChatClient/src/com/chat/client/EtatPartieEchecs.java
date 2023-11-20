@@ -8,7 +8,7 @@ public class EtatPartieEchecs {
 
     public void setetatEchiquier(){
         this.etatEchiquier = etatEchiquier;
-    }
+    } 
 
     public char getetatEchiquier(char etatEchiquier){
         return etatEchiquier;
@@ -17,12 +17,12 @@ public class EtatPartieEchecs {
 
     public EtatPartieEchecs(){
 
-        /*for(int i=1; i<=6;i++)
+        for(int i=1; i<=6;i++)
         {
             for(int j=0; j<=7;j++)
             {
                 //pion noir
-                if(i==1 || i==6)
+                if(i==1)
                 {
                     etatEchiquier[i][j]='p';
                 }
@@ -57,17 +57,16 @@ public class EtatPartieEchecs {
         this.etatEchiquier [0][5] = 'f';
         this.etatEchiquier [0][6] = 'c';
         this.etatEchiquier [0][7] = 't';
-         */
-        PartieEchecs nouvellePartie = new PartieEchecs();
-        for (int i = 0; i < 8; i++){
-            for (int j = 0 ; j < 8; j++){
-                if (nouvellePartie.getEchiquier()[i][j] instanceof ){
-
-                } else if {
-
-                }
-            }
-        }
+         
+		/*
+		 * PartieEchecs nouvellePartie = new PartieEchecs(); for (int i = 0; i < 8;
+		 * i++){ for (int j = 0 ; j < 8; j++){ if (nouvellePartie.getEchiquier()[i][j]
+		 * instanceof ){
+		 * 
+		 * } else if {
+		 * 
+		 * } } }
+		 */
 
     }
 
