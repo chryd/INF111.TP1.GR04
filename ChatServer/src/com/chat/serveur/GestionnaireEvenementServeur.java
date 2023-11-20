@@ -375,7 +375,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                	System.out.println("final: " + posFinal.toString());  // debug
 	                	
 	                	boolean works = partie.deplace(posDebut, posFinal);
-	                	System.out.println(works);
+	                	System.out.println("works :" + works); //debug
 	                	// works vérifie si déplacement fonctionne
 	                	if (works) {
 	                		//déplacement réussi donc change de tour

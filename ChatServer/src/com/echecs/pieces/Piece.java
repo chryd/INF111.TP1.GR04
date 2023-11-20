@@ -37,6 +37,7 @@ public abstract class Piece {
      * @return
      */
     protected static boolean echiquierEstVideA(int colonne, int ligne, Piece[][] echiquier){
+        System.out.println("place est vide? " + (echiquier[colonne][ligne] == null)); //debug
         return echiquier[colonne][ligne] == null;
     }
 }

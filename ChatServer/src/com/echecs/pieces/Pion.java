@@ -33,29 +33,39 @@ public class Pion extends Piece{
 
         //Dans le cas d'un déplacement passif
         if (pos2.estSurLaMemeColonneQue(pos1)){
+            System.out.println("aucune piece la00? " + pos2.estSurLaMemeColonneQue(pos1)); //debug
 
             //Si on veut effectuer un mouvement simple
             if (ligneFinale == (ligneInitiale + deplacement)) {
                 //s'assurer qu'il n'y a aucune piece
                 output = echiquierEstVideA(colonneFinale, ligneFinale, echiquier);
+                System.out.println("aucune piece la1? " + output); //debug
 
                 //si on veut faire 2 pas
             } else if (ligneFinale == (ligneInitiale + grandDeplacement)) {
                 //s'assurer que le premier pas peut se faire (la case est vide)
                 if (!echiquierEstVideA(colonneInitiale, ligneInitiale + deplacement, echiquier)){
+                    System.out.println("aucune piece la11? " + false); //debug
                     return false;
                 }
                 //s'assurer qu'il n'y a pas de pieces
                 output = echiquierEstVideA(colonneFinale, ligneFinale, echiquier);
-            }
+                System.out.println("aucune piece la2? " + output); //debug
 
+            } else {
+            System.out.println("aucune piece la01? " + output); //debug
+            }
             //Dans le cas d'une attaque
         } else if (pos2.estSurLaMemeDiagonaleQue(pos1) && ligneFinale == ligneInitiale + deplacement) {
             //s'assurer que le movement se fait en diagonal et seulement dans la position possible
             //s'assurer qu'il y a une pièce à la position finale
             output = !echiquierEstVideA(colonneFinale, ligneFinale, echiquier);
+            System.out.println("aucune piece la3? " + output); //debug
+
         } else {
             output = false;
+            System.out.println("aucune piece la4? " + output); //debug
+
         }
         return output;
     }
