@@ -12,6 +12,7 @@ package com.chat.commun.evenement;
 public class Evenement {
     private Object source;
     private final String type, argument;
+	private Object nArguments;
 
     /**
      * Construit un événement.
@@ -59,8 +60,14 @@ public class Evenement {
      * @return int nArguments
      */
     public int nArguments(){
+        if (!argument.isEmpty()) {
         String[] listeArgs = argument.split(" ");
+//        System.out.println(argument);   // debug
         return listeArgs.length;
+        }
+        else {
+        	return 0;
+        }
     }
 
     /**
@@ -69,6 +76,7 @@ public class Evenement {
      */
     public void checkArguments(int l, int u){
         if(this.nArguments() < l || this.nArguments() > u){
+//        	System.out.println("nArguments : " + this.nArguments());   //debug
             throw new IllegalArgumentException("Pas le nombre d'arguments attendu");
         }
     }

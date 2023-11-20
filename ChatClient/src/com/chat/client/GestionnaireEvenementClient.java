@@ -1,5 +1,5 @@
 package com.chat.client;
-
+import com.chat.client.ClientChat;
 import com.chat.commun.evenement.Evenement;
 import com.chat.commun.evenement.GestionnaireEvenement;
 import com.chat.commun.net.Connexion;
@@ -47,7 +47,8 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     membres = arg.split(":");
                     System.out.println("\t\t"+membres.length+" personnes dans le salon :");
                     for (String s:membres)
-                        System.out.println("\t\t\t- "+s);
+
+
                     break;
 
                 case "JOIN": //Le serveur envoie une demande d'invitation
@@ -86,7 +87,32 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     arg = evenement.getArgument();
                     System.out.println("Vous quittez le salon avec " + arg);
                     break;
+                    
+                case "CHESS":
+            		arg = evenement.getArgument();
+                    System.out.println("Invitation de jeu d'echec reçu de " + arg + " \n");
+                    
+                	break;    
+                    
+                case "CHESSOK"://activation partie
+                	arg = evenement.getArgument();
 
+                	System.out.println(" recu CHESSOK " + arg);  //debug
+                	ClientChat chat1 = new ClientChat();
+
+                	chat1.nouvellePartie();
+
+                	EtatPartieEchecs etatPartie = chat1.getEtatPartieEchecs();
+                	System.out.println(etatPartie);
+         
+                	break;
+                case "MOVE":
+                	
+                	break;
+                case "ABANDON":
+                	break;
+                    
+                    
                 default: //Afficher le texte recu :
                     System.out.println("\t\t\t."+evenement.getType()+" "+evenement.getArgument());
             }
