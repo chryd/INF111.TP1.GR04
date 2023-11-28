@@ -46,9 +46,8 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     arg = evenement.getArgument();
                     membres = arg.split(":");
                     System.out.println("\t\t"+membres.length+" personnes dans le salon :");
-                    for (String s:membres) {
-                        
-                    }
+                    for (String s:membres)
+                        System.out.println("\t\t\t- "+s);
                     break;
 
                 case "JOIN": //Le serveur envoie une demande d'invitation
@@ -65,9 +64,9 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                         System.out.println("Pas d'invitation");
                     } else {
                         if (lMembres == 1) {
-                            System.out.println("\t\t" + lMembres + " personne qui vous a invite :");
+                            System.out.println("\t\t" + lMembres + " invitation en attente :");
                         } else {
-                            System.out.println("\t\t" + lMembres + " personnes qui vous ont invite :");
+                            System.out.println("\t\t" + lMembres + " invitations en attente :");
                         }
                         for (String s:membres) System.out.println("\t\t\t- "+s);
                     }

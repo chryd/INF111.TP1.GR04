@@ -210,6 +210,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                             //si l'expediteur est le recepteur de l'invitation
                             if (i.getAliasRecepteur().equals(aliasExpediteur)) {
                                 listDInvitation += i.getAliasEmetteur() + ":"; //ajouter le nom de l'emeteur de l'invitation a la liste
+                            } else {
+                                listDInvitation += i.getAliasRecepteur() + ":"; //ajouter le nom de l'expediteur de l'invitation a la liste
                             }
                         }
 

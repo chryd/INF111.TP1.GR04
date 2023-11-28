@@ -3,58 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="blessed, deplacements normaux fonctionnent!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatClient/src/com/chat/client/GestionnaireEvenementClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatClient/src/com/chat/client/GestionnaireEvenementClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/GestionnaireEvenementServeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/GestionnaireEvenementServeur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/CavalierTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/DameTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/FouTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PartieEchecTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PositionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/RoiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/TourTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/programme/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/ClientChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/ClientChat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/EtatPartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/EtatPartieEchecs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/commun/evenement/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/commun/evenement/Evenement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/programme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/programme/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/SalonPrive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/SalonPrive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat$NonExistentUserException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat$NonExistentUserException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/PartieEchecs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/CavalierTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/DameTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/FouTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/PartieEchecTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/PionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/PositionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/RoiTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/TourTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Cavalier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Dame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Dame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Fou.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Pion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Roi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Tour.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/programme/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/util/EchecsUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/util/EchecsUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/FouTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/FouTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PartieEchecTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PartieEchecTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/RoiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/RoiTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Cavalier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Dame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Dame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Fou.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Pion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Roi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
