@@ -97,7 +97,7 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                 case "CHESSOK"://activation partie
                 	arg = evenement.getArgument();
 
-                	System.out.println(" recu CHESSOK " + arg);  //debug
+                	//System.out.println(" recu CHESSOK " + arg);  //debug
                 	ClientChat chat1 = new ClientChat();
 
                 	chat1.nouvellePartie();

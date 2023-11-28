@@ -273,8 +273,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                         //cree un nouveau salon sprive
                         salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
                         
-                        System.out.println("salon prive?: " + privateList.contains(salonPrive));  //debug
-                      //si le salon est deja cree, envoyer le message a l'utilisateur specifie
+                        //System.out.println("salon prive?: " + privateList.contains(salonPrive));  //debug
+                        // si le salon est deja cree, envoyer le message a l'utilisateur specifie
                         if (privateList.contains(salonPrive)) {
                             
                             //enovoyer les messages approprie aux clients
@@ -284,8 +284,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                      //Creer une nouvelle invitation
 	                        invitation = new Invitation(aliasExpediteur, aliasArgs);
 	                        
-	                        System.out.println("is there an invitation?:" + !invitationList.isEmpty());//debug
-	                        System.out.println("does it contain invitation from person?: " + invitationList.contains(invitation)); //debug
+	                        //System.out.println("is there an invitation?:" + !invitationList.isEmpty());//debug
+	                        //System.out.println("does it contain invitation from person?: " + invitationList.contains(invitation)); //debug
 	                        //Si une invitation entre ces utilisateurs a deja ete lance
 	                        if (!invitationList.isEmpty() && invitationList.contains(invitation)) {
 	                        	
@@ -314,8 +314,8 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                            msg1 = "CHESSOK " + salonPrive.getAlias1() + " " + couleur_alias1;
 	                            msg2 = "CHESSOK " + salonPrive.getAlias2() + " " + couleur_alias2;
 	                            
-		                        System.out.println("msg1: " + msg1);  //debug
-		                        System.out.println("msg2: " + msg2);  //debug
+		                        //System.out.println("msg1: " + msg1);  //debug
+		                        //System.out.println("msg2: " + msg2);  //debug
 
 	                          //si le salon est deja cree, envoyer le message au deux utilisateur du salonPrive
 	                            //if (privateList.contains(salonPrive)) {
@@ -359,23 +359,23 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 	if ((arg.length() == 5 && (arg.contains("-")|| arg.contains(" ")) || arg.length() == 4 )) { 
                 		
 	                	// prend les deux premiers caracteres
-                		System.out.println(arg);// debug
-//                		System.out.println(arg.substring(1,2));// debug
-                		System.out.println(Byte.parseByte(arg.substring(1,2)));// debug
+                		//System.out.println(arg);// debug
+//                		//System.out.println(arg.substring(1,2));// debug
+                		//System.out.println(Byte.parseByte(arg.substring(1,2)));// debug
 	                	Position posDebut = new Position( arg.charAt(0), Byte.parseByte(arg.substring(1,2)));
 	                	// prend les deux derniers caracteres
 	                	Position posFinal = new Position(arg.charAt(arg.length()-2), Byte.parseByte(arg.substring(arg.length()-1)));
-	                	System.out.println(arg.charAt(arg.length()-2));// debug
-	                	System.out.println(arg.substring(arg.length()-1));// debug
+	                	//System.out.println(arg.charAt(arg.length()-2));// debug
+	                	//System.out.println(arg.substring(arg.length()-1));// debug
 	                			
 	                	salonPrive = new SalonPrive(aliasExpediteur, aliasArgs);
 	                	PartieEchecs partie = new PartieEchecs();
 	                			//salonPrive.getPartech();
-	                	System.out.println("debut: " + posDebut);  // debug
-	                	System.out.println("final: " + posFinal.toString());  // debug
+	                	//System.out.println("debut: " + posDebut);  // debug
+	                	//System.out.println("final: " + posFinal.toString());  // debug
 	                	
 	                	boolean works = partie.deplace(posDebut, posFinal);
-	                	System.out.println("works :" + works); //debug
+	                	//System.out.println("works :" + works); //debug
 	                	// works vérifie si déplacement fonctionne
 	                	if (works) {
 	                		//déplacement réussi donc change de tour
@@ -389,7 +389,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                				msg1 = "ECHEC " + salonPrive.getAlias2();	
 	                			}
 	                        
-	                			System.out.println("To client: " + msg1);  //debug
+	                			//System.out.println("To client: " + msg1);  //debug
 
 	                			serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
 	                			serveur.findAlias(salonPrive.getAlias2()).envoyer(msg1);
@@ -397,7 +397,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                		}
 	                		msg1 = "MOVE" + arg.substring(0,2) + arg.substring(arg.length()-2);	
 	    
-		        			System.out.println("to both client: " + msg1);  //debug
+		        			//System.out.println("to both client: " + msg1);  //debug
 		        			serveur.findAlias(salonPrive.getAlias1()).envoyer(msg1);
 		        			serveur.findAlias(salonPrive.getAlias2()).envoyer(msg1);
 	
@@ -426,7 +426,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                 	break;
                 	
                 case "ABANDON": //Envoie la liste des alias des personnes connectï¿½es :
-                    System.out.println("ON entre dans abandon");
+                    //System.out.println("ON entre dans abandon");
                     aliasExpediteur = cnx.getAlias();
                     Connexion receveur;
                     salonPrive = privateList.get(0);
@@ -460,7 +460,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                         //evenement.checkArguments(0, 0);
                         cnx.envoyer("HIST " + serveur.historique());
                   //  } catch (IllegalArgumentException illegalArgumentException) { //dans le cas ou on a plus d'un evenement
-                  //      System.out.println("Format attendu  la commande: 'HIST'");
+                        System.out.println("Format attendu  la commande: 'HIST'");
                 		}
             
                     break;
