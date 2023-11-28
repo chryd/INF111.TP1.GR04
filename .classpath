@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ChatClient/src"/>
+	<classpathentry kind="src" path="ChatServer/src"/>
+	<classpathentry kind="src" path="JeuEchecs/src"/>
+	<classpathentry kind="src" path="SocketsExempleSimple/src"/>
+	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.13.2.jar"/>
+	<classpathentry kind="output" path="ChatClient/out/production/ChatClient"/>
+</classpath>

@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="blessed, deplacements normaux fonctionnent!!">
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PartieEchecTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/RoiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Cavalier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Dame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Fou.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Pion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Roi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/CavalierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/CavalierTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/DameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/DameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/FouTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/FouTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/PartieEchecTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/PionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PositionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/RoiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/Test/TourTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/Test/TourTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Cavalier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Dame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Fou.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Pion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Roi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/pieces/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/pieces/Tour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/programme/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/programme/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/echecs/util/EchecsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/util/EchecsUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,22 +30,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/TP/INF111-A2023_TP1_V1/TP1.GR04/ChatServer/src",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yumtl/OneDrive - ETS/Cours/A23/INF111/TP/INF111-A2023_TP1_V1/TP1.GR04/ChatServer/src&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yumtl\OneDrive - ETS\Cours\A23\INF111\TP\INF111-A2023_TP1_V1\TP1.GR04\ChatServer\src" />
