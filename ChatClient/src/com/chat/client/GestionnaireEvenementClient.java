@@ -46,9 +46,9 @@ public class GestionnaireEvenementClient implements GestionnaireEvenement {
                     arg = evenement.getArgument();
                     membres = arg.split(":");
                     System.out.println("\t\t"+membres.length+" personnes dans le salon :");
-                    for (String s:membres)
-
-
+                    for (String s:membres) {
+                        
+                    }
                     break;
 
                 case "JOIN": //Le serveur envoie une demande d'invitation

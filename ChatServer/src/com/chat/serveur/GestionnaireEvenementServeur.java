@@ -265,8 +265,6 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                         //verifie que l'utilisateur recherche existe
                         serveur.checkIfConnected(aliasArgs);
                         
-                      
-                        
                         //vérifie s'il y a déja une partie en cours
                        // serveur.EtatPartieEchecs();
                         
@@ -297,8 +295,7 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
 	                        	if (random.nextBoolean()) {
 	                        		 couleur_alias1 = 'b';
 	                        		 couleur_alias2 = 'n';
-	                        	} else
-	                        	{
+	                        	} else {
 	                        		 couleur_alias1 = 'n';
 	                        		 couleur_alias2 = 'b';
 	                        	}
@@ -454,14 +451,14 @@ public class GestionnaireEvenementServeur implements GestionnaireEvenement {
                     break;
                     
                 case "HIST": //affiche l'historique
-                	//try 
+                	try
                 	{
                         //verifie que le nombre d'argument est adequat
                         //evenement.checkArguments(0, 0);
                         cnx.envoyer("HIST " + serveur.historique());
-                  //  } catch (IllegalArgumentException illegalArgumentException) { //dans le cas ou on a plus d'un evenement
+                    } catch (IllegalArgumentException illegalArgumentException) { //dans le cas ou on a plus d'un evenement
                         System.out.println("Format attendu  la commande: 'HIST'");
-                		}
+                    }
             
                     break;
                     

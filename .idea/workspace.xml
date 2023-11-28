@@ -3,7 +3,58 @@
   <component name="ChangeListManager">
     <list default="true" id="eeb1308c-6956-4278-9e55-81c917a4e6e3" name="Changes" comment="blessed, deplacements normaux fonctionnent!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/JeuEchecs/src/com/echecs/PartieEchecs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/GestionnaireEvenementServeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/com/chat/serveur/GestionnaireEvenementServeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChatServer/src/echecs/PartieEchecs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/CavalierTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/DameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/FouTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PartieEchecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/PositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/RoiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/Test/TourTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatServer/src/echecs/programme/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/ClientChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/ClientChat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/EtatPartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/EtatPartieEchecs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatClient/com/chat/client/GestionnaireEvenementClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/commun/evenement/Evenement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/commun/evenement/Evenement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/programme/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/programme/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/GestionnaireEvenementServeur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/SalonPrive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/SalonPrive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat$NonExistentUserException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat$NonExistentUserException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/com/chat/serveur/ServeurChat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/PartieEchecs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/CavalierTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/DameTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/FouTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/PartieEchecTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/PionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/PositionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/RoiTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/Test/TourTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Cavalier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Dame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Dame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Fou.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Pion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Roi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/pieces/Tour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/programme/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatServer/echecs/util/EchecsUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatServer/echecs/util/EchecsUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/PartieEchecs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/FouTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/FouTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PartieEchecTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PartieEchecTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/PionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/RoiTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/Test/RoiTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Cavalier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Dame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Dame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Fou.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Pion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Roi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JeuEchecs/com/echecs/pieces/Tour.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +105,46 @@
       <recent name="com.echecs.pieces" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PartieEchecTest">
+  <component name="RunManager" selected="Application.com.chat.programme.Main (1)">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="echecs.programme.Main" />
+      <module name="ChatServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="echecs.programme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.chat.programme.Main (1)" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
+      <module name="ChatClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chat.programme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.chat.programme.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chat.programme.Main" />
+      <module name="ChatServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chat.programme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PartieEchecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JeuEchecs" />
       <extension name="coverage">
@@ -86,85 +176,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PartieEchecTest.testDeplacementPionSimpleBlanc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
-      <option name="METHOD_NAME" value="testDeplacementPionSimpleBlanc" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PartieEchecTest.testDeplacementPionSimpleNoir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
-      <option name="METHOD_NAME" value="testDeplacementPionSimpleNoir" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PartieEchecTest.testNEstPasEnEchec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
-      <option name="METHOD_NAME" value="testNEstPasEnEchec" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PartieEchecTest.testTrouveRoi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JeuEchecs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.echecs.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.echecs.Test" />
-      <option name="MAIN_CLASS_NAME" value="com.echecs.Test.PartieEchecTest" />
-      <option name="METHOD_NAME" value="testTrouveRoi" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.PartieEchecTest.testTrouveRoi" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.com.chat.programme.Main" />
+      <item itemvalue="Application.com.chat.programme.Main (1)" />
       <item itemvalue="JUnit.PartieEchecTest" />
       <item itemvalue="JUnit.PartieEchecTest.testAttaquePion" />
-      <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleBlanc" />
-      <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleNoir" />
-      <item itemvalue="JUnit.PartieEchecTest.testNEstPasEnEchec" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.chat.programme.Main (1)" />
+        <item itemvalue="Application.com.chat.programme.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PartieEchecTest" />
         <item itemvalue="JUnit.PartieEchecTest.testAttaquePion" />
-        <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleNoir" />
-        <item itemvalue="JUnit.PartieEchecTest.testDeplacementPionSimpleBlanc" />
-        <item itemvalue="JUnit.PartieEchecTest.testNEstPasEnEchec" />
       </list>
     </recent_temporary>
   </component>
