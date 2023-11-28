@@ -1,11 +1,10 @@
-package com.echecs.Test;
+package echecs.Test;
 
-import com.echecs.*;
-import com.echecs.pieces.*;
+import echecs.*;
+import echecs.pieces.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
 
 public class FouTest {
     Piece fou = new Fou('n');
@@ -22,6 +21,7 @@ public class FouTest {
 
     @Test
     public void testPeutSeDeplacerBase() {
+
         assertTrue(fou.peutSeDeplacer(initiale, diagonaleValide, echiquier));
     }
 
@@ -44,7 +44,7 @@ public class FouTest {
     public void testPeutSeDeplacerInvalideIntheWay() {
         //
         Piece inTheWay = new Pion('n');
-        echiquier[2][4] = inTheWay; //at E6
+        echiquier[4][2] = inTheWay; //at E6
         assertFalse(fou.peutSeDeplacer(initiale, diagonaleValide, echiquier));
     }
 }

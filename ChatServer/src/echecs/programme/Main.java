@@ -1,6 +1,7 @@
-package com.echecs.programme;
+package echecs.programme;
 
-import com.echecs.util.EchecsUtil;
+import echecs.util.*;
+
 /**
  * Programme pour tester les classes de jeu d'échecs.
  *

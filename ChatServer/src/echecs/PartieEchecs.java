@@ -1,8 +1,8 @@
-package com.echecs;
+package echecs;
 
-import com.echecs.pieces.*;
-import com.echecs.util.*;
-import com.echecs.Position;
+import echecs.pieces.*;
+import echecs.util.*;
+
 import java.util.*;
 
 /**
@@ -78,6 +78,16 @@ public class PartieEchecs {
         //placement des rois
         echiquier[4][0] = new Roi('n');
         echiquier[4][7] = new Roi('b');
+
+        //assigner de maniere aleatoire une couleur aux joueurs
+        Random rand = new Random();
+        if (rand.nextInt(2) == 0) {
+            couleurJoueur1 = 'b';
+            couleurJoueur2 = 'n';
+        } else {
+            couleurJoueur1 = 'n';
+            couleurJoueur2 = 'b';
+        }
 
         //assigner les attributs de bases
         tour = 'b';
@@ -155,16 +165,6 @@ public class PartieEchecs {
             tour = 'b';
     }
 
-    public void assignerAuJoueur1(char couleur){
-        if (couleur == 'b') {
-            couleurJoueur1 = 'b';
-            couleurJoueur2 = 'n';
-        } else {
-            couleurJoueur1 = 'n';
-            couleurJoueur2 = 'b';
-        }
-    }
-
     /**
      * Tente de déplacer une pièce d'une position à une autre sur l'échiquier.
      * Le déplacement peut échouer pour plusieurs raisons, selon les règles du
@@ -181,17 +181,8 @@ public class PartieEchecs {
      */
     public boolean deplace(Position initiale, Position finale) {
 
-    	
-    	System.out.println("init.col :" + initiale.getColonne()); //debug
-    	System.out.println("init.lin :" + initiale.getLigne()); //debug
-    	System.out.println("fin.col :" + finale.getColonne()); //debug
-    	System.out.println("fin.lin :" + finale.getLigne()); //debug
-    	System.out.println("pos Valid init :" + EchecsUtil.positionValide(initiale));//debug
-    	System.out.println("pos Valid fin :" + EchecsUtil.positionValide(finale));//debug
-
         //Verifie si les positions initiale et finale sont valides
         if (!EchecsUtil.positionValide(initiale) || !EchecsUtil.positionValide(finale)){
-        	System.out.println("position non valid"); //debug
             return false;
         }
 
@@ -206,12 +197,10 @@ public class PartieEchecs {
 
         //verifier les conditions pour le deplacement
         if (!checkConditionDeplace(pieceInitial, initiale, finale, colonneInitiale, colonneFinale, ligneInitiale)){
-        	System.out.println("Condition non valid"); //debug
             return false;
         }
 
         //Effectuer le deplacement
-        
         //derniere ligne dependemment de la couleur
         int derniereLigne;
         if (tour == 'b') {
@@ -235,7 +224,6 @@ public class PartieEchecs {
             //supprimer le dernier tour
             echiquier[colonneInitiale][ligneInitiale] = echiquier[ligneFinale][colonneFinale];
             echiquier[colonneFinale][ligneFinale] = pieceCapture;
-            System.out.println("est en echec"); //debug
             return false;
         }
 
@@ -280,12 +268,10 @@ public class PartieEchecs {
         // - Il y a bien une pièce à déplacer à la position initiale
         // - La couleur de la pièce à déplacer possède bien la couleur correspondant au jour qui a la main
         if (pieceInitial == null){
-            System.out.println("pas de piece"); //debug
             return false;
         }
 
         if (pieceInitial.getCouleur() != tour){
-            System.out.println("pas bonne couleur de piece"); //debug
             return false;
         }
 
@@ -301,9 +287,8 @@ public class PartieEchecs {
             //ou pour tout autre deplacement
         } else {
             output = pieceInitial.peutSeDeplacer(initiale, finale, echiquier);
-            System.out.println("ca marche normal (pas roque) :" + output); //debug
         }
-        System.out.println("le output: " + output); //debug
+
         return output;
     }
 

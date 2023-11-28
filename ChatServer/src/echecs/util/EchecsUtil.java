@@ -1,6 +1,6 @@
-package com.echecs.util;
+package echecs.util;
 
-import com.echecs.Position;
+import echecs.*;
 
 /**
  * Classe utilitaire pour le jeu d'échecs.

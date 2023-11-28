@@ -1,11 +1,10 @@
-package com.echecs.Test;
+package echecs.Test;
 
-import com.echecs.*;
-import com.echecs.pieces.*;
+import echecs.*;
+import echecs.pieces.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
 
 public class PionTest {
     Piece pion = new Pion('n');
@@ -37,6 +36,16 @@ public class PionTest {
         echiquier[2][5] = new Pion('b'); //C3
         Position attaqueValide = new Position('c', (byte) 3);
         assertTrue(pion.peutSeDeplacer(initiale, attaqueValide, echiquier));
+    }
+
+    @Test
+    public void testAttaqueInalide(){
+        echiquier[4][1] = new Pion('n'); //E7
+        echiquier[4][7] = new Roi('b'); //E1
+        Position attaqueInvalide = new Position('e', (byte) 1);
+        Position pionN = new Position('e', (byte) 7);
+
+        assertFalse(pion.peutSeDeplacer(pionN, attaqueInvalide, echiquier));
     }
 
     @Test

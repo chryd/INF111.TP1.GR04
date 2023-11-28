@@ -1,6 +1,6 @@
-package com.echecs.Test;
+package echecs.Test;
 
-import com.echecs.*;
+import echecs.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;
